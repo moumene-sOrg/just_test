@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cases page</title>
+    <link rel="stylesheet" href="home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="half-page">
+        <!--header-->
+        <header class="header">
+            <div class="half-left">
+                <h1 class="vet-name">case managment</h1>
+            </div>
+        </header>
+
+        <!--------->
+        <section class="welcome-section">
+            <div class="desktop-header">
+                <h1>Case Management</h1>
+                <span id="dashboardMessage">Review and manage patient records submitted for examination.</span>
+            </div>
+
+        </section>
+        <!--cases-->
+
+        <section class="cases-section">
+            <button data-status="all">All</button>
+            <button data-status="pending">Pending</button>
+            <button data-status="in_progress">In Progress</button>
+            <button data-status="completed">Completed</button>
+        </section>
+        <!--request section-->
+
+        <div id="request-cards"></div>
+        <table class="cases-table">
+
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>CONDITION summary</th>
+                    <th>Owner</th>
+                    <th>Details</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody id="request-cards-desktop"></tbody>
+
+        </table>
+
+        <div id="detailsModal" class="modal hidden">
+            <div class="modal-content">
+                <span id="closeModal">&times;</span>
+                <div id="modalBody"></div>
+            </div>
+        </div>
+
+        <section class="showwingresult-tab">
+            <span id="table-info"></span>
+            <div class="tab-next-prev">
+                <button id="prevPage"><i class="fa-solid fa-chevron-left"></i></button>
+                <button id="nextPage"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+
+        </section>
+
+    </div>
+
+    <!--navigation bar-->
+
+    <!-- Desk Version -->
+    <aside class="desk">
+        <div class="logo">
+            <div class="img"></div>
+            <h3>Vet<span>Hub</span></h3>
+        </div>
+        <ul class="list">
+            <li><a href="./home.html"><i class="fa-solid fa-house"></i>Home</a></li>
+            <li><a href="./casespage.html"><i class="fa-solid fa-briefcase-medical"></i>Vet Report</a></li>
+            <li><a href="./chat.html"><i class="fa-regular fa-message"></i>Chat</a></li>
+            <li><a href="./vetprofile.html"><i class="fa-regular fa-user"></i>Profile</a></li>
+            <li><a href="./setting.html"><i class="fa-solid fa-sliders"></i>Settings</a></li>
+        </ul>
+    </aside>
+
+    <!-- Mobile version -->
+
+    <aside class="mob">
+        <ul class="list">
+            <li><a href="./home.html"><i class="fa-solid fa-house"></i></a></li>
+            <li><a href="./casespage.html"><i class="fa-solid fa-briefcase-medical"></i></a></li>
+            <li><a href="./chat.html"><i class="fa-regular fa-message"></i></a></li>
+            <li><a href="./vetprofile.html"><i class="fa-regular fa-user"></i></a></li>
+            <li><a href="./setting.html"><i class="fa-solid fa-sliders"></i></a></li>
+        </ul>
+    </aside>
+
+    <script src="casepage.js" defer></script>
+    <script src="navbar.js" defer></script>
+</body>
+
+</html>

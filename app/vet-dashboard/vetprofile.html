@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vet profile </title>
+    <link rel="stylesheet" href="home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <!--header section-->
+
+    <div class="half-page">
+
+        <header class="header">
+            <div class="half-left">
+                <img src="images/logo.png" alt="Logo" class="logo-image">
+                <div class="vet-info">
+                    <h4 class="vet-name">VetCare Pro</h4>
+                </div>
+            </div>
+        </header>
+
+        <!--vet information section-->
+
+        <section class="vet-profile">
+            <img id="profileImage" class="profile-pic" src="../SignIn/Images/defaults/vet.png" alt="profile image">
+            <div class="vetinfo">
+                <h2 class="vetname">
+                    <span>Dr.</span>
+                    <span id="VetName">User</span>
+                </h2>
+                <div style="color: #64748b; font-size: 0.9rem; margin-top: -5px; margin-bottom: 5px;">License No: <span id="VetLicense">N/A</span></div>
+                <span class="vetspeciality" id="VetSpeciality">speciality</span>
+                <div class="location">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span id="VetLocation">location</span>
+                </div>
+            </div>
+            <button class="editprofile-button" onclick="window.location.href='./setting.html'">
+                <i class="fa-solid fa-pen"></i>
+                <span>Edit Profile</span>
+            </button>
+        </section>
+        <!--performance stastics section-->
+
+        <h3 class="statistic-title">Performance Statistics</h3>
+        <section class="statistic-box">
+            <div class="treates-animal">
+                <div class="treates-animal-header">
+                    <span>Total Animals Treated</span>
+                    <i class="fa-solid fa-users"></i>
+                </div>
+                <h1 class="total-treated" id="totalAnimals">0</h1>
+
+            </div>
+
+            <div class="treates-animal">
+                <div class="treates-animal-header">
+                    <span>Success Rate</span>
+                    <i class="fa-regular fa-circle-check"></i>
+                </div>
+                <h1 class="total-treated" id="successRate">0%</h1>
+
+            </div>
+
+            <div class="treates-animal">
+                <div class="treates-animal-header">
+                    <span>Monthly Consultations</span>
+                    <i class="fa-solid fa-briefcase-medical"></i>
+                </div>
+                <h1 class="total-treated" id="monthlyConsults">0</h1>
+
+            </div>
+        </section>
+
+        <!--treatment history section-->
+        <section>
+            <div class="history-header">
+                <h3 class="history-title">Treatment History</h3>
+
+            </div>
+            <div id="TreatmentHistory"></div>
+        </section>
+
+        <!----------------->
+
+        <section class="prev-next">
+            <div id="resultInfo" class="result-info"></div>
+            <div class="prev-next-button">
+                <button id="prevBtn" class="previous-btn">Previous</button>
+                <button id="nextBtn" class="next-btn">Next</button>
+            </div>
+        </section>
+
+    </div>
+
+    <!--navigation bar-->
+
+    <!-- Desk Version -->
+    <aside class="desk">
+        <div class="logo">
+            <div class="img"></div>
+            <h3>Vet<span>Hub</span></h3>
+        </div>
+        <ul class="list">
+            <li><a href="./home.html"><i class="fa-solid fa-house"></i>Home</a></li>
+            <li><a href="./casespage.html"><i class="fa-solid fa-briefcase-medical"></i>Vet Report</a></li>
+            <li><a href="./chat.html"><i class="fa-regular fa-message"></i>Chat</a></li>
+            <li><a href="./vetprofile.html"><i class="fa-regular fa-user"></i>Profile</a></li>
+            <li><a href="./setting.html"><i class="fa-solid fa-sliders"></i>Settings</a></li>
+        </ul>
+    </aside>
+
+    <!-- Mobile version -->
+
+    <aside class="mob">
+        <ul class="list">
+            <li><a href="./home.html"><i class="fa-solid fa-house"></i></a></li>
+            <li><a href="./casespage.html"><i class="fa-solid fa-briefcase-medical"></i></a></li>
+            <li><a href="./chat.html"><i class="fa-regular fa-message"></i></a></li>
+            <li><a href="./vetprofile.html"><i class="fa-regular fa-user"></i></a></li>
+            <li><a href="./setting.html"><i class="fa-solid fa-sliders"></i></a></li>
+        </ul>
+    </aside>
+
+    <script src="vetprofile.js" defer></script>
+    <script src="navbar.js" defer></script>
+</body>
+
+</html>

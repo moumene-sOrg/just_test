@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Css File -->
+    <link rel="stylesheet" href="Home.css">
+    <title>Home</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Start Side Bar -->
+        <!-- Desk Version -->
+        <aside class="desk">
+            <div class="logo">
+                <div class="img"></div>
+                <h3>Refuge<span>Hub</span></h3>
+            </div>
+            <ul class="list">
+                <li class="active"><a href="./Home.html"><i class="fa-regular fa-house"></i>Home</a></li>
+                <li><a href="./Requests.html"><i class="fa-regular fa-file-lines"></i>Requests</a></li>
+                <li><a href="./AdoptedAnimals.html"><i class="fa-solid fa-paw"></i>AdoptedAnimals</a></li>
+                <li><a href="./Vet-reports.html"><i class="fa-solid fa-briefcase-medical"></i>Vet Report</a></li>
+                <li><a href="./chat.html"><i class="fa-regular fa-message"></i>Chat</a></li>
+                <li><a href="./Profile.html"><i class="fa-regular fa-user"></i>Profile</a></li>
+                <li><a href="./Settings.html"><i class="fa-solid fa-sliders"></i>Settings</a></li>
+            </ul>
+        </aside>
+        <!-- Mobile version -->
+        <aside class="mob">
+            <ul class="list">
+                <li class="active"><a href="./Home.html"><i class="fa-regular fa-house"></i></a></li>
+                <li><a href="./Requests.html"><i class="fa-regular fa-file-lines"></i></a></li>
+                <li><a href="./AdoptedAnimals.html"><i class="fa-solid fa-paw"></i></a></li>
+                <li><a href="./Vet-reports.html"><i class="fa-solid fa-briefcase-medical"></i></a></li>
+                <li><a href="./chat.html"><i class="fa-regular fa-message"></i></a></li>
+                <li><a href="./Profile.html"><i class="fa-regular fa-user"></i></a></li>
+                <li><a href="Settings.html"><i class="fa-solid fa-sliders"></i></a></li>
+            </ul>
+        </aside>
+        <!-- End Side Bar -->
+        <!-- Start Main Content -->
+        <div class="main">
+            <!-- Start Title -->
+            <div class="title">
+                <h2 id="welcome-title">Welcome back, Shelter Manager</h2>
+                <p>Manage your shelter housing, vet reports, and adoption history from one central location.</p>
+            </div>
+            <!-- End Title -->
+            <!-- Start Cards -->
+            <div class="cards">
+                <a href="./Requests.html">
+                    <div class="new-req">
+                        <i class="fst fa-regular fa-building"></i><span class="req">12 new</span>
+                        <h2>New Housing Requests</h2>
+                        <p>Animals marked 'Yes' for shelter placement by field agents and veterinarians.</p>
+                        <a href="./Requests.html" style="text-decoration: none;">Review pending placements<i class="lst fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </a>
+                <a href="./Vet-reports.html">
+                    <div class="vet-rep">
+                        <i class="fst fa-solid fa-wave-square"></i><span class="rep">8 updated</span>
+                        <h2>Recent Vet Reports</h2>
+                        <p>Check the latest health updates, clinical findings, and medical clearance certificates.</p>
+                        <a href="./Vet-reports.html">View clinical updates<i
+                                class="lst fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </a>
+            </div>
+            <!-- End Cards -->
+            <!-- Start Table List -->
+            <div class="adopted-animals">
+                <div class="header">
+                    <h2>Adopted Animals</h2>
+                    <a href="./AdoptedAnimals.html"><button class="see-more">See More</button></a>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Species</th>
+                            <th>Adoption Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="adopted-preview-body">
+                    </tbody>
+                </table>
+                <div class="next-pages" style="display: flex; justify-content: flex-end; gap: 30px; margin-top: 20px;">
+                    <a href="#" id="prev-page"><i class="fa-solid fa-angle-left"></i></a>
+                    <a href="#" id="next-page"><i class="fa-solid fa-angle-right"></i></a>
+                </div>
+            </div>
+            <!-- End table List -->
+        </div>
+        <!-- End Main Content -->
+        <!-- Start Popup -->
+        <div id="overlay" class="overlay"></div>
+        <div id="popup" class="popup">
+            <h3>Animal information</h3>
+            <div class="content">
+                <div class="image">
+                    <img src="./images/popup-profile.jpg" alt="">
+                </div>
+                <hr>
+                <div class="animal-info">
+                    <div>
+                        <span>Animal ID</span>
+                        <p id="popup-id"></p>
+                    </div>
+                    <div>
+                        <span>Type</span>
+                        <p id="popup-type"></p>
+                    </div>
+                    <div>
+                        <span>Status</span>
+                        <p id="popup-status"></p>
+                    </div>
+                    <div>
+                        <span>Location / Status Details</span>
+                        <p id="popup-location"></p>
+                    </div>
+                </div>
+            </div>
+            <i id="close-x" class="fa-solid fa-xmark"></i>
+            <button id="close-btn">Close</button>
+        </div>
+        <!-- End Popup -->
+    </div>
+    <!-- JS File -->
+    <script src="./Home.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../src/css/style.css" />
+    <!-- Box icons -->
+    <!-- Basic Icons -->
+    <link
+      href="https://cdn.boxicons.com/3.0.8/fonts/basic/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- Filled Icons -->
+    <link
+      href="https://cdn.boxicons.com/3.0.8/fonts/filled/boxicons-filled.min.css"
+      rel="stylesheet"
+    />
+    <!-- Brand Icons -->
+    <link
+      href="https://cdn.boxicons.com/3.0.8/fonts/brands/boxicons-brands.min.css"
+      rel="stylesheet"
+    />
+    <title>Profile</title>
+  </head>
+  <body class=" bg-[#F6F7F8]">
+    <div class="cont h-screen md:m-0 ">
+      <section
+        class="Report-animal flex flex-row space-y-3 gap-1.5 md:divide-x-2 md:divide-[#E8F3FD]"
+      >
+        <aside class="main-aside hidden md:hover:w-3.5 border-[#E8F3FD] pt-6">
+          <div
+            class="logo flex gap-2 justify-start ml-4 -mt-[10px] items-center"
+          >
+            <img src="/Mobile/logo.png" width="60px" alt="logo" />
+            <div class="leading-0">
+              <span class="text-xl font-bold">App Name</span>
+              <br />
+              <span class="text-main-blue font-medium text-xs -mt-1"
+                >Reporter Portal
+              </span>
+            </div>
+          </div>
+          <ul
+            class="w-full flex flex-col justify-center items-start gap-1 mt-8 px-2"
+          >
+            <li class="w-full rounded-xl active-link">
+              <a href="../../index.html">
+                <div
+                  class="flex flex-row items-center gap-1.5 w-full p-2 rounded-xl"
+                >
+                  <i class="fa-regular fa-house text-2xl text-icons"></i>
+                  <span class="text-icons text-sm font-medium mt-0.5"
+                    >Home</span
+                  >
+                </div>
+              </a>
+            </li>
+            <li class="w-full rounded-xl">
+              <a href="../MyReports/index.html">
+                <div
+                  class="flex flex-row items-center gap-1.5 w-full p-2 rounded-xl"
+                >
+                  <i class="fa-regular fa-file-lines text-2xl text-icons"></i>
+                  <span class="text-icons text-sm font-medium mt-0.5"
+                    >My Reports</span
+                  >
+                </div>
+              </a>
+            </li>
+            <li class="w-full rounded-xl">
+              <a href=".">
+                <div
+                  class="flex flex-row items-center gap-1.5 w-full p-2 rounded-xl"
+                >
+                  <i class="bx bx-announcement text-3xl text-icons"></i>
+                  <span class="text-icons text-sm font-medium"
+                    >Report Animal</span
+                  >
+                </div>
+              </a>
+            </li>
+            <li class="w-full rounded-xl">
+              <a href="#">
+                <div
+                  class="flex flex-row items-center gap-1.5 w-full p-2 rounded-xl"
+                >
+                  <i class="bx bx-discussion text-[27px] text-icons"></i>
+                  <span class="text-icons text-sm font-medium">Messages</span>
+                </div>
+              </a>
+            </li>
+            <li class="w-full rounded-xl">
+              <a href="#">
+                <div
+                  class="flex flex-row items-center gap-1.5 w-full p-2 rounded-xl"
+                >
+                  <i class="fa-regular fa-user text-2xl text-icons"></i>
+                  <span class="text-icons text-sm font-medium mt-0.5"
+                    >profile</span
+                  >
+                </div>
+              </a>
+            </li>
+          </ul>
+        </aside>
+
+        <!-- column 2 -->
+        <div
+          class="col2 md:flex-1 flex flex-col min-w-0 w-full mb-5 md:ml-[240px] md:p-6  md:justify-center  md:items-center"
+        >
+        <header
+          class="flex flex-row justify-center items-center w-full bg-white  md:hidden p-4 "
+        >
+              <a href="../../index.html"><i class="fa-solid text-xl fa-chevron-left justify-self-start"></i></a></i>
+              <h2 class="font-bold text-xl m-auto">Profile</h2>
+              <a href="../../index.html"><i class="fa-solid text-xl fa-gear px-6 justify-self-start"></i></a></i>
+        </header>
+        <main id="profile" class="p-6 mb-20" >
+            <div class="info-box flex flex-col justify-center items-center mb-10">
+                <div class=" relative">
+                    <div class="profile-pic w-32 rounded-full border-4 border-white overflow-hidden h-32 shadow-2xl">
+                        <img src="../../public/profile/close-up-portrait-young-bearded-man-white-shirt-jacket-posing-camera-with-broad-smile-isolated-gray.jpg" class=" object-cover w-full h-full" alt="">
+                    </div>
+                    <button class="absolute w-10 h-10 justify-center items-center rounded-full bg-main-blue border-white border-4 z-10 bottom-0 right-0 cursor-pointer shadow-2xl"><i class="fa-solid fa-pen text-white"></i></button>
+                </div>
+                <div class="info mt-5 flex flex-col items-center justify-center">
+                    <h2 class="text-2xl font-semibold">Jordan Smith</h2>
+                    <span class="text-[#64748B] font-medium">+213 678797070</span>
+                </div>
+            </div>
+            <div class="navigation-menu flex flex-col gap-4 ">
+              <h3 class="text-xs font-bold text-[#94A3B8] tracking-widest">ACCOUNT SETTINGS</h3>
+              <nav>
+                <ul class="flex flex-col gap-4  justify-center">
+                  <li class="bg-white p-4 rounded-2xl shadow flex items-center justify-between ">
+                    <div class="flex items-center gap-4">
+                      <img src="../../public/profile/profile.svg" alt="profile icon">
+                      <div class="leading-4 ">
+                        <h3 class="font-semibold p-0 m-0">Personal Info</h3>
+                        <span class="text-sm text-[#64748B] ">Manage your data</span>
+                      </div>
+                    </div>
+                    <button><i class="fa-solid fa-chevron-right text-[#64748B]"></i></button>
+                  </li>
+                  <li class="bg-white p-4 rounded-2xl shadow flex items-center justify-between ">
+                    <div class="flex items-center gap-4">
+                      <img src="../../public/profile/impact.svg" alt="profile icon">
+                      <div class="leading-4 ">
+                        <h3 class="font-semibold p-0 m-0">My Impact</h3>
+                        <span class="text-sm text-[#64748B] ">See your contributions</span>
+                      </div>
+                    </div>
+                    <button><i class="fa-solid fa-chevron-right text-[#64748B]"></i></button>
+                  </li>
+                  <li class="bg-white p-4 rounded-2xl shadow flex items-center justify-between ">
+                    <div class="flex items-center gap-4">
+                      <img src="../../public/profile/notificationsvg.svg" alt="profile icon">
+                      <div class="leading-4 ">
+                        <h3 class="font-semibold p-0 m-0">Notification</h3>
+                        <span class="text-sm text-[#64748B] ">Alerts & preferences</span>
+                      </div>
+                    </div>
+                    <button><i class="fa-solid fa-chevron-right text-[#64748B]"></i></button>
+                  </li>
+                  <li class="bg-white p-4 rounded-2xl shadow flex items-center justify-between ">
+                    <div class="flex items-center gap-4">
+                      <img src="../../public/profile/securite.svg" alt="profile icon">
+                      <div class="leading-4 ">
+                        <h3 class="font-semibold p-0 m-0">Account Security</h3>
+                        <span class="text-sm text-[#64748B] ">Password & 2FA</span>
+                      </div>
+                    </div>
+                    <button><i class="fa-solid fa-chevron-right text-[#64748B]"></i></button>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div class="log-out mt-8 text-[#EF4444] font-semibold flex justify-center items-center gap-2">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span class="-mt-0.5">Log Out</span>
+            </div>
+        </main>
+                  <nav
+            class="flex fixed bottom-2 justify-between items-center left-4 right-4 bg-white p-4 rounded-3xl shadow-2xl md:hidden"
+          >
+            <a href="../../index.html">
+              <div class="flex flex-col items-center">
+                <i class="fa-solid fa-house text-2xl text-icons"></i>
+                <span class="text-icons text-xs font-medium mt-0.5">Home</span>
+              </div>
+            </a>
+            <a href="/adoption_app/Front-End/User-Dashbord/pages/MyReports/index.html">
+              <div class="flex flex-col justify-center items-center">
+                <i class="fa-regular fa-file-lines text-2xl text-icons"></i>
+                <span class="text-icons text-xs font-medium mt-0.5"
+                  >My Reports</span
+                >
+              </div>
+            </a>
+            <a href="pages/Report/index.html">
+              <div class="flex flex-col items-center">
+                <div
+                  class="p-0.5 bg-linear-to-r from-main-blue via-[#60A5FA] to-[#34D399] rounded-full"
+                >
+                  <div
+                    class="circle p-1 rounded-full w-9 h-9 flex justify-center items-center bg-main-blue border-lime-200"
+                  >
+                    <i class="fa-solid fa-plus text-white"></i>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="#">
+              <div class="flex flex-col justify-center items-center">
+                <i class="bx bx-discussion text-2xl text-icons"></i>
+                <span class="text-icons text-xs font-medium">Messages</span>
+              </div>
+            </a>
+            <a href="pages/profile/index.html">
+              <div class="flex flex-col justify-center items-center">
+                <i class="fa-solid fa-user text-2xl text-icons"></i>
+                <span class="text-icons text-xs font-medium mt-0.5"
+                  >profile</span
+                >
+              </div>
+            </a>
+          </nav>
+        </div>
+      </section>
+    </div>
+    <script type="module" src="../../src/js/shared/main.js"></script>
+    <script type="module" src="../../src/js/pages/report.js"></script>
+  </body>
+</html>

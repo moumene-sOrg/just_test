@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link rel="stylesheet" href="../../src/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link
+      href="https://cdn.boxicons.com/3.0.8/fonts/basic/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://cdn.boxicons.com/3.0.8/fonts/filled/boxicons-filled.min.css" rel="stylesheet" />
+    <link href="https://cdn.boxicons.com/3.0.8/fonts/brands/boxicons-brands.min.css" rel="stylesheet" />
+    <title>Profile Settings</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              'main-blue': '#197FE6',
+              'week-gray': '#F1F5F9',
+              'icons': '#94A3B8',
+              'grey-text': '#475569',
+              primary: "#197fe6",
+              "background-light": "#f8fafc",
+              "background-dark": "#0f172a",
+            },
+            fontFamily: {
+              display: ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100"
+  >
+    <div class="flex h-screen overflow-hidden">
+      <aside
+        class="w-64 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 md:flex flex-col justify-between py-6 px-4 z-10 hidden"
+      >
+        <div class="flex flex-col gap-8">
+          <!-- Logo -->
+          <div class="flex items-center gap-3 px-2">
+            <div class="w-10 h-10 rounded-xl flex items-center justify-center shadow-sm">
+              <img src="../../public/Logo.svg" alt="Logo" class="w-7 h-7 " />
+            </div>
+            <div>
+              <p class="text-sm font-black text-slate-900 leading-tight">Mission Control</p>
+              <p class="text-xs font-semibold text-main-blue leading-tight">Reporter Portal</p>
+            </div>
+          </div>
+
+          <ul
+            class="w-full flex flex-col justify-center items-start gap-1  px-2"
+          >
+            <li class="w-full rounded-xl active-link">
+              <a href="../../index.html">
+                <div
+                  class="flex flex-row items-center gap-1.5 w-full p-2 rounded-xl"
+                >
+                  <i class="fa-solid fa-house text-2xl text-icons"></i>
+                  <span class="text-icons text-sm font-medium mt-0.5"
+                    >Home</span
+                  >
+                </div>
+              </a>
+            </li>
+            <li class="w-full rounded-xl">
+              <a href="../MyReports/index.html">
+                <div
+                  class="flex flex-row items-center gap-1.5 w-full p-2 rounded-xl"
+                >
+                  <i class="fa-regular fa-file-lines text-2xl text-icons"></i>
+                  <span class="text-icons text-sm font-medium mt-0.5"
+                    >My Reports</span
+                  >
+                </div>
+              </a>
+            </li>
+            <li class="w-full rounded-xl">
+              <a href="../Report/index.html">
+                <div
+                  class="flex flex-row items-center gap-1.5 w-full p-2 rounded-xl"
+                >
+                  <i class="bx bx-announcement text-3xl text-icons"></i>
+                  <span class="text-icons text-sm font-medium"
+                    >Report Animal</span
+                  >
+                </div>
+              </a>
+            </li>
+            <li class="w-full rounded-xl">
+              <a href="../Chat/index.html">
+                <div
+                  class="flex flex-row items-center gap-1.5 w-full p-2 rounded-xl"
+                >
+                  <i class="bx bx-discussion text-[27px] text-icons"></i>
+                  <span class="text-icons text-sm font-medium">Messages</span>
+                </div>
+              </a>
+            </li>
+            <li class="w-full rounded-xl active-page-aside">
+              <a href="./index.html">
+                <div
+                  class="flex flex-row items-center gap-1.5 w-full p-2 rounded-xl"
+                >
+                  <i class="fa-regular fa-user text-2xl text-icons active-link"></i>
+                  <span class="text-icons text-sm font-medium mt-0.5 active-link"
+                    >profile</span
+                  >
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </aside>
+      <main
+        class="flex-1 overflow-y-auto bg-slate-50 dark:bg-slate-950 p-4 md:p-8 pb-28 md:pb-8 mb-1 lg:mb-0"
+      >
+        <div class="max-w-5xl mx-auto">
+          <header class="mb-12">
+            <h2
+              class="text-4xl font-bold text-slate-900 dark:text-white tracking-tight"
+            >
+              Profile Settings
+            </h2>
+            <p class="text-slate-500 dark:text-slate-400 mt-2 text-lg">
+              Manage your personal information and account preferences.
+            </p>
+          </header>
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
+            <div class="md:col-span-4">
+              <div
+                class="bg-white dark:bg-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col items-center"
+              >
+                <div class="relative mb-8">
+                  <div
+                    class="size-44 rounded-full border border-slate-100 dark:border-slate-800 p-1 bg-white dark:bg-slate-900 shadow-sm"
+                  >
+                    <div
+                      class="w-full h-full rounded-full bg-slate-100 overflow-hidden"
+                      style="
+                        background-image: url(&quot;../../../SignIn/Images/defaults/user.png&quot;);
+                        background-size: cover;
+                      "
+                    ></div>
+                  </div>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-900 dark:text-white" id="profileName">
+                  User
+                </h3>
+                <div class="w-full space-y-3">
+                  <button
+                    class="edit w-full py-3 px-4 bg-primary text-white bg-main-blue cursor-pointer rounded-xl font-semibold text-sm hover:bg-primary/90 transition-all shadow-md shadow-primary/10"
+                  >
+                    Edit Profile
+                  </button>
+                  <button
+                    class="save w-full py-3 px-4 bg-slate-100 cursor-pointer dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-xl font-semibold text-sm hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
+                  >
+                    Save Edit
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="md:col-span-8 flex flex-col gap-8">
+              <div
+                class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden p-8"
+              >
+                <div class="mb-8">
+                  <h3
+                    class="text-xl font-bold text-slate-900 dark:text-white mb-2"
+                  >
+                    Personal Details
+                  </h3>
+                  <p class="text-sm text-slate-500">
+                    Your information is kept secure and only used for rescue
+                    operations.
+                  </p>
+                </div>
+                <div class="space-y-6">
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label
+                        for="firstName"
+                        class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1"
+                        >First Name</label
+                      >
+                      <input
+                        type="text"
+                        placeholder="Your First Name"
+                        class="focus:outline-0 dark:text-slate-100 font-medium placeholder:text-slate-400 w-full bg-transparent"
+                        disabled
+                        id="firstName"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        for="lastName"
+                        class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1"
+                        >Last Name</label
+                      >
+                      <input
+                        type="text"
+                        placeholder="Your Last Name"
+                        class="focus:outline-0 dark:text-slate-100 font-medium placeholder:text-slate-400 w-full bg-transparent"
+                        disabled
+                        id="lastName"
+                      />
+                    </div>
+                    <div class="md:col-span-2">
+                      <label
+                        for="email"
+                        class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1"
+                        >Email Address</label
+                      >
+                      <input
+                        type="email"
+                        placeholder="your.email@example.com"
+                        class="focus:outline-0 dark:text-slate-100 font-medium placeholder:text-slate-400 w-full bg-transparent"
+                        disabled
+                        id="email"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden p-8"
+              >
+                <div class="mb-8">
+                  <h3
+                    class="text-xl font-bold text-slate-900 dark:text-white mb-2"
+                  >
+                    Security Settings
+                  </h3>
+                  <p class="text-sm text-slate-500">
+                    Manage your login methods and account safety.
+                  </p>
+                </div>
+                <div class="space-y-6">
+                  <div
+                    class="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-100 dark:border-slate-800"
+                  >
+                    <div class="flex items-center gap-4">
+                      <div
+                        class="size-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary"
+                      >
+                        <span class="material-symbols-outlined">key</span>
+                      </div>
+                      <div>
+                        <p
+                          class="text-sm font-semibold text-slate-900 dark:text-white"
+                        >
+                          Account Password
+                        </p>
+                      </div>
+                    </div>
+                    <button
+                      id="changePassBtn"
+                      class="px-4 py-2 text-primary text-sm font-semibold hover:bg-primary/5 rounded-lg transition-colors cursor-pointer"
+                    >
+                      Update
+                    </button>
+                  </div>
+                  <!-- Password Change Section (Hidden by default) -->
+                  <div id="passwordFields" class="hidden space-y-4 p-4 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-100 dark:border-slate-800">
+                    <div>
+                      <label class="block text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1">Old Password</label>
+                      <input type="password" id="oldPassword" class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-primary">
+                    </div>
+                    <div>
+                      <label class="block text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1">New Password</label>
+                      <input type="password" id="newPassword" class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-primary">
+                    </div>
+                    <div class="flex gap-2">
+                      <button id="savePassBtn" class="flex-1 py-2 bg-primary text-white bg-main-blue rounded-lg text-xs font-bold hover:bg-primary/90 transition-all">Save New Password</button>
+                      <button id="cancelPassBtn" class="flex-1 py-2 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-lg text-xs font-bold hover:bg-slate-300 dark:hover:bg-slate-600 transition-all">Cancel</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-12">
+                  <button
+                     id="logoutBtn"
+                     class="w-full py-4  px-6 bg-red-50 cursor-pointer  dark:bg-red-500/5 hover:bg-red-100 dark:hover:bg-red-500/10 border border-red-200 dark:border-red-500/20 text-red-600 rounded-xl font-bold flex items-center justify-center gap-2 transition-all"
+                  >
+                    <span class="material-symbols-outlined text-xl"
+                      >logout</span
+                    >
+                    Sign Out from Account
+                  </button>
+                  <p class="text-center text-xs text-slate-400 mt-4">
+                    Logging out will end your current session across all
+                    devices.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <nav
+        class="flex fixed bottom-2 justify-between items-center left-4 right-4 bg-white p-4 rounded-3xl shadow-2xl md:hidden"
+      >
+        <a href="../../index.html">
+          <div class="flex flex-col items-center">
+            <i class="fa-solid fa-house text-2xl text-icons"></i>
+            <span class="text-icons text-xs font-medium mt-0.5">Home</span>
+          </div>
+        </a>
+        <a href="pages/MyReports/index.html">
+          <div class="flex flex-col justify-center items-center">
+            <i class="fa-regular fa-file-lines text-2xl text-icons"></i>
+            <span class="text-icons text-xs font-medium mt-0.5"
+              >My Reports</span
+            >
+          </div>
+        </a>
+        <a href="pages/Report/index.html">
+          <div class="flex flex-col items-center">
+            <div
+              class="p-0.5 bg-linear-to-r from-main-blue via-[#60A5FA] to-[#34D399] rounded-full"
+            >
+              <div
+                class="circle p-1 rounded-full w-9 h-9 flex justify-center items-center bg-main-blue border-lime-200"
+              >
+                <i class="fa-solid fa-plus text-white"></i>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a href="../Chat/index.html">
+          <div class="flex flex-col justify-center items-center">
+            <i class="bx bx-discussion text-2xl text-icons"></i>
+            <span class="text-icons text-xs font-medium">Messages</span>
+          </div>
+        </a>
+        <a href="./index.html">
+          <div class="flex flex-col justify-center items-center">
+            <i class="fa-solid fa-user text-2xl text-icons active-link"></i>
+            <span class="text-icons text-xs font-medium mt-0.5 active-link">profile</span>
+          </div>
+        </a>
+      </nav>
+    </div>
+    <script type="module" src="../../src/js/shared/main.js"></script>
+    <!-- Removed profile.js to prevent interference with inputs -->
+    <script>
+      const BASE = "http://localhost:3000";
+
+      // =====================
+      // GET PROFILE
+      // =====================
+      async function loadUserProfileData() {
+        const token = localStorage.getItem("token");
+        if (!token) return;
+
+        try {
+          const res = await fetch(BASE + "/app/users/profile", {
+            method: "GET",
+            headers: {
+              Authorization: `Bearer ${token}`
+            }
+          });
+
+          const data = await res.json();
+          if (data) {
+            const user = data;
+            const firstNameEl = document.getElementById("firstName");
+            const lastNameEl = document.getElementById("lastName");
+            const emailEl = document.getElementById("email");
+            const profileDisplay = document.getElementById("profileName");
+
+            if (firstNameEl) firstNameEl.value = user.first_name || "";
+            if (lastNameEl) lastNameEl.value = user.last_name || "";
+            if (emailEl) emailEl.value = user.email || "";
+
+            if (profileDisplay) {
+              const fullName = `${user.first_name || ""} ${user.last_name || ""}`.trim();
+              profileDisplay.innerText = fullName || "User";
+            }
+          }
+        } catch (err) {
+          console.error("Error fetching profile:", err);
+        }
+      }
+
+      // =====================
+      // UPDATE PROFILE
+      // =====================
+      async function updateProfile() {
+        const token = localStorage.getItem("token");
+        const firstName = document.getElementById("firstName").value;
+        const lastName = document.getElementById("lastName").value;
+        const email = document.getElementById("email").value;
+
+        try {
+          const res = await fetch(BASE + "/app/users/profile", {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`
+            },
+            body: JSON.stringify({
+              first_name: firstName,
+              last_name: lastName,
+              email: email
+            })
+          });
+
+          const data = await res.json().catch(() => ({ error: "Invalid server response" }));
+
+          if (res.ok) {
+            alert("Profile updated successfully! ✅");
+            loadUserProfileData(); // Refresh display
+          } else {
+            alert("Error: " + (data.error || data.message || "Unknown error"));
+          }
+        } catch (err) {
+          console.error("Update profile error:", err);
+          alert("Network error: Could not reach the server at " + BASE + ". Please ensure your backend is running.");
+        }
+      }
+
+      // CHANGE PASSWORD
+      async function changePass() {
+        const token = localStorage.getItem("token");
+        const oldPassword = document.getElementById("oldPassword").value;
+        const newPassword = document.getElementById("newPassword").value;
+
+        if (!oldPassword || !newPassword) {
+          alert("Please fill both password fields.");
+          return;
+        }
+
+        try {
+          const res = await fetch(BASE + "/app/users/changePassword", {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`
+            },
+            body: JSON.stringify({
+              oldPassword,
+              newPassword
+            })
+          });
+
+          const data = await res.json().catch(() => ({ error: "Invalid server response" }));
+
+          if (res.ok) {
+            alert("Password updated successfully! 🔐");
+            document.getElementById("passwordFields").classList.add("hidden");
+            document.getElementById("oldPassword").value = "";
+            document.getElementById("newPassword").value = "";
+          } else {
+            alert("Error: " + (data.error || data.message || "Unknown error"));
+          }
+        } catch (err) {
+          console.error("Change password error:", err);
+          alert("Network error: Could not reach the server at " + BASE + ". Please ensure your backend is running.");
+        }
+      }
+
+      // =====================
+      // EVENT LISTENERS
+      // =====================
+      document.addEventListener("DOMContentLoaded", () => {
+        loadUserProfileData();
+
+        // Edit button
+        document.querySelector(".edit").addEventListener("click", () => {
+          const inputs = ["firstName", "lastName", "email", "phone"];
+          inputs.forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.disabled = false;
+          });
+          document.getElementById("firstName").focus();
+        });
+
+        // Save button
+        document.querySelector(".save").addEventListener("click", async () => {
+          await updateProfile();
+          const inputs = ["firstName", "lastName", "email", "phone"];
+          inputs.forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.disabled = true;
+          });
+        });
+
+        // Password change toggle
+        document.getElementById("changePassBtn").addEventListener("click", () => {
+          document.getElementById("passwordFields").classList.toggle("hidden");
+        });
+
+        document.getElementById("cancelPassBtn").addEventListener("click", () => {
+          document.getElementById("passwordFields").classList.add("hidden");
+        });
+
+        document.getElementById("savePassBtn").addEventListener("click", changePass);
+
+        // Logout
+        document.getElementById("logoutBtn").addEventListener("click", () => {
+          localStorage.removeItem("token");
+          window.location.href = "../../../SignIn/SignInPage.html";
+        });
+      });
+    </script>
+  </body>
+</html>

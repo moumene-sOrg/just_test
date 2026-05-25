@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!--CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="SingnInAndChoosingTypesStyles.css">
+</head>
+
+<body class="login-calss">
+    <div class="page-desktop">
+        <div class="image-half">
+            <img src="Images/dog.jpg" alt="animal">
+            <div class="image-logo">
+                <img src="Images/logo.png" alt="logo">
+                <span>AdoptMe</span>
+
+            </div>
+            <div class="image-text">
+                <h1>Find your new furrybest friend today.</h1>
+                <span>Join over 50,000 families who found their perfect match through our adoption network.</span>
+            </div>
+
+        </div>
+
+        <div class="content-half">
+            <!-- logo section -->
+            <section class="logo-section">
+                <img src="Images/logo.png" alt="AdopteMe" class="logo">
+                <h1>Welcome Back!</h1>
+                <div class="text">We're glad to see you again.</div>
+            </section>
+
+            <!-- Email Section -->
+            <section class="input-section">
+                <div class="label">Email Address</div>
+                <div class="input-box">
+                    <i class="fa-regular fa-envelope"></i>
+                    <input id="login-email" type="email" placeholder="e.g. alex@example.com" required>
+                </div>
+            </section>
+
+            <!--password section-->
+            <section class="input-section">
+                <div class="label">Password</div>
+                <div class="input-box">
+                    <i class="fa-solid fa-lock"></i>
+                    <input id="login-password" type="password" placeholder="Password" required>
+                </div>
+            </section>
+
+            <!--Password Incorrect-->
+            <section class="errormessage">
+                <span id="error-message"></span>
+            </section>
+
+            <!--forget password section-->
+            <section class="forget-password-section">
+                <label>
+                    <input type="checkbox">
+                    Remember Me
+                </label>
+                <a href="ForgotPassword.html">Forgot Password?</a>
+            </section>
+
+            <!--login-button section-->
+            <section class="login-button">
+                <button id="login-btn">Log In</button>
+            </section>
+
+            <!--continue with apple or google section-->
+            <div class="devider">Or continue with</div>
+            <section class="social-section">
+                <button onclick="window.location.href='https://accounts.google.com/'">
+                    <img src="Images/google-logo.jpg" alt="Google Logo">
+                    Google
+                </button>
+                <button onclick="window.location.href='https://appleid.apple.com/'">
+                    <img src="Images/apple-logo.jpg" alt="Apple Logo">
+                    Apple
+                </button>
+            </section>
+
+            <!--footer -->
+            <section class="footer">
+                <span>Don't have an account?
+                    <a href="CreateAnAccout.html">Sign Up</a>
+                </span>
+            </section>
+
+            <!--features-->
+            <section class="features">
+                <span>
+                    <img src="Images/secure.jpg" alt="Secure Login">
+                    Secure Login
+                </span>
+                <span>
+                    <img src="Images/love.jpg" alt="Safe Adoption">
+                    Safe Adoption
+                </span>
+            </section>
+
+        </div>
+    </div>
+
+    <script>
+        console.log(" the script is working");
+        document.getElementById('login-btn').addEventListener('click', async (e) => {
+            e.preventDefault();
+
+            console.log("LOGIN BUTTON CLICKED"); // ✅ add this
+
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+
+            console.log("EMAIL:", email);
+            console.log("PASSWORD:", password);
+
+            const errorMsg = document.getElementById('error-message');
+
+            if (!email || !password) {
+                errorMsg.textContent = 'Please fill in all fields';
+                return;
+            }
+
+            try {
+                const response = await fetch('http://localhost:3000/app/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                });
+
+                const data = await response.json();
+
+                console.log("LOGIN RESPONSE:", data); // ✅ THIS is what you were missing
+
+                    if (response.ok) {
+                        localStorage.setItem('token', data.token);
+                        localStorage.setItem('admin_token', data.token); // Store for dashboard
+
+                        console.log("LOGIN SUCCESS. ROLE:", data.role);
+
+                        if (data.role === 'admin') {
+                            window.location.href = '/Admin/index.html';
+                        } else if (data.role === 'vet') {
+                            window.location.href = '/vet/home.html';
+                        } else if (data.role === 'refuge') {
+                            window.location.href = '/refuge/Home.html';
+                        } else {
+                            window.location.href = '/User-Dashbord/index.html';
+                        }
+                    } else {
+                    errorMsg.textContent = data.message || 'Login failed';
+                }
+
+            } catch (error) {
+                console.error("LOGIN ERROR:", error);
+                errorMsg.textContent = 'Server error. Please try again.';
+            }
+        });
+
+    </script>
+</body>
+
+</html>

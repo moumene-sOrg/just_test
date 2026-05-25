@@ -1,0 +1,155 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model users {
+  id             Int       @id @default(autoincrement())
+  email          String    @db.VarChar(50)
+  pass_word      String    @db.VarChar(255)
+  first_name     String?   @db.VarChar(100)
+  last_name      String?   @db.VarChar(100)
+  role           Role
+  account_status AccountStatus @default(active)
+  last_login_at  DateTime? @db.Timestamp(0)
+  postal_code    String?   @db.VarChar(20)
+  created_at     DateTime? @default(now()) @db.Timestamp(0)
+
+  normal_users        normal_users?
+  vets                vets?
+  refuges             refuges?
+  demands             demands[] @relation("UserDemands")
+  demands_assignments demands_assignments[]
+  refuge_rejections   refuge_rejections[]
+}
+
+enum Role {
+  normal
+  vet
+  refuge
+  admin
+}
+
+enum AccountStatus {
+  active
+  pending
+  disabled
+}
+
+model normal_users {
+  user_id Int @id
+  users   users @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  
+  demands demands[] @relation("NormalUserDemands")
+}
+
+model vets {
+  user_id        Int          @id
+  diplomat       String?      @db.VarChar(255)
+  adress_vet     String?      @db.VarChar(255)
+  license_number String?      @db.VarChar(100)
+  
+  users          users        @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  
+  examination_reports examination_reports[]
+  vet_rejections      vet_rejections[]
+}
+
+model refuges {
+  user_id             Int          @id
+  adress_refuge       String?      @db.VarChar(255)
+  capacity            Int?         
+  registration        Int?         
+  facility_photo      String?      @db.VarChar(255)
+  opening_from        DateTime?    @db.Time
+  opening_till        DateTime?    @db.Time
+  current_animals     Int?         
+  representative_name String?      @db.VarChar(100)
+  
+  users               users        @relation(fields: [user_id], references: [id], onDelete: Cascade)
+}
+
+model demands {
+  id                 Int          @id @default(autoincrement())
+  animal_type        AnimalType
+  animal_status      String?      @db.VarChar(255)
+  location           String?      @db.VarChar(255)
+  event_date         DateTime?    @db.Date
+  event_time         DateTime?    @db.Time
+  photo              String?      @db.VarChar(255)
+
+  created_by         Int?
+  created_at         DateTime?    @default(now()) @db.Timestamp(0)
+  additional_details String?      @db.Text
+  
+  users              users?        @relation("UserDemands", fields: [created_by], references: [id], onDelete: Cascade, map: "demands_created_by_users_fkey")
+  normal_users       normal_users? @relation("NormalUserDemands", fields: [created_by], references: [user_id], onDelete: Cascade, map: "demands_created_by_normal_users_fkey")
+  
+  demands_assignments demands_assignments[]
+  examination_reports examination_reports[]
+  vet_rejections      vet_rejections[]
+  refuge_rejections   refuge_rejections[]
+}
+
+enum AnimalType {
+  dog
+  cat
+  bird
+  cow
+  sheep
+  other
+}
+
+
+
+model demands_assignments {
+  id          Int @id @default(autoincrement())
+  demand_id   Int? 
+  accepted_by Int? 
+  
+  demands     demands? @relation(fields: [demand_id], references: [id], onDelete: Cascade)
+  users       users?   @relation(fields: [accepted_by], references: [id], onDelete: Cascade)
+}
+
+model examination_reports {
+  id                Int  @id @default(autoincrement())
+  demand_id         Int  
+  vet_id            Int  
+  diagnosis         String @db.Text
+  treatment         String @db.Text
+  notes             String? @db.Text
+  shelter_placement ShelterPlacement? @default(no)
+  created_at        DateTime? @default(now()) @db.Timestamp(0)
+  
+  demands           demands @relation(fields: [demand_id], references: [id], onDelete: Cascade)
+  vets              vets    @relation(fields: [vet_id], references: [user_id], onDelete: Cascade)
+}
+
+enum ShelterPlacement {
+  yes
+  no
+}
+
+model vet_rejections {
+  vet_id    Int 
+  demand_id Int 
+  
+  vets      vets    @relation(fields: [vet_id], references: [user_id], onDelete: Cascade)
+  demands   demands @relation(fields: [demand_id], references: [id], onDelete: Cascade)
+  
+  @@id([vet_id, demand_id])
+}
+
+model refuge_rejections {
+  refuge_id Int
+  demand_id Int
+  
+  users     users   @relation(fields: [refuge_id], references: [id], onDelete: Cascade)
+  demands   demands @relation(fields: [demand_id], references: [id], onDelete: Cascade)
+  
+  @@id([refuge_id, demand_id])
+}

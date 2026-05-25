@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+:root {
+    --blue-color: #197FE6;
+    --gray: #e5e7eb53;
+    --light-black: rgba(15, 23, 42, 0.735);
+}
+/* Start Requests Table */
+.req-table {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid #e6e6e6;
+}
+
+.req-table h2 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead th {
+    text-align: left;
+    padding: 10px 15px;
+    font-size: 13px;
+    color: #888;
+    letter-spacing: 0.5px;
+}
+
+th:last-child {
+    text-align: right;
+}
+
+tbody td {
+    padding: 12px 15px;
+    vertical-align: middle;
+    border-top: 1px solid #f0f0f0;
+}
+
+table span {
+    background-color: #ececec;
+    padding: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 20px;
+}
+tbody td button.view-det-btn{
+    background-color: transparent;
+    color: var(--blue-color);
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    border: none;
+}
+tbody td button.view-det-btn:hover{
+    text-decoration: underline;
+}
+
+tbody button {
+    padding: 12px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+tbody tr td.rej-acc {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+tbody button.accept {
+    color: green;
+    background-color: rgb(217, 255, 217);
+}
+
+tbody button.reject {
+    background-color: rgb(255, 215, 215);
+    color: rgb(175, 54, 54);
+}
+
+tbody button.accept:hover {
+    background-color: rgb(163, 254, 163);
+}
+
+tbody button.reject:hover {
+    background-color: rgb(244, 164, 164);
+}
+
+/* End Requests Table */
+
+/* Start Popup */
+.overlay {
+    background-color: rgba(0, 0, 0, 0.507);
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    display: none;
+}
+
+.popup {
+    background-color: white;
+    position: fixed;
+    width: 50%;
+    height: auto;
+    min-height: 320px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+    border-radius: 20px;
+    display: none;
+    padding: 20px;
+}
+.popup h3{
+    margin-bottom: 20px;
+}
+.popup .content{
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 90%;
+    padding: 20px;
+    gap: 20px;
+}
+.popup .content .image{
+    flex-basis: 45%;
+    border-radius: 10px;
+    display: flex;
+}
+.popup .content .image img{
+    width: 200px;
+    height: 180px;
+    border: 2px solid #092848;
+    border-radius: 30px;
+}
+.popup .content .animal-info{
+    flex-basis: 60%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    gap: 10px;
+}
+.popup .content .animal-info span{
+    color: #888;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+.popup .content .animal-info p{
+    font-weight: 600;
+    color: #092848;
+}
+.popup i{
+    position: absolute;
+    color: var(--light-black);
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.popup button{
+    background-color: var(--blue-color);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    cursor: pointer;
+}
+
+/* End Popup */
+
+.overlay.active, .popup.active {
+    display: block;
+}
+/* Start Next Pages */
+.next-pages{
+    display: flex;
+    align-self: flex-end;
+    gap: 30px;
+}
+.next-pages i{
+    color: var(--blue-color);
+    font-size: 20px;
+    cursor: pointer;
+}
+/* End Next pages */
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .popup {
+        width: 70%;
+    }
+}
+
+@media (max-width: 815px) {
+    .popup {
+        width: 90%;
+        min-height: auto;
+    }
+    .popup .content {
+        flex-direction: column;
+        height: auto;
+    }
+    .popup .content .image img {
+        width: 100%;
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 600px){
+    .req-table {
+        padding: 20px 16px;
+        overflow-x: auto;
+    }
+}

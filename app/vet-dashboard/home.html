@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vet Dashboard Home</title>
+    <link rel="stylesheet" href="home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <!--header-->
+    <div class="half-page">
+        <header class="header">
+            <div class="half-left">
+                <img src="images/logo.png" alt="Logo" class="logo-image">
+                <div class="vet-info">
+                    <h4 class="vet-name"><span>Dr.</span><span id="VetName"></span></h4>
+                    <span class="vet-Speciality" id="VetSpeciality">speciality</span>
+                </div>
+            </div>
+        </header>
+
+        <!------------>
+        <section class="welcome-section">
+            <div class="desktop-header">
+                <h1>
+                    <p> Welcome back, Dr.</p>
+                    <p id="VetName"></p>
+                </h1>
+                <span id="dashboardMessage">Your practice is flourishing today.
+                    You have 5 new appointment requests and 12 unread messages.</span>
+            </div>
+        </section>
+
+        <!--request section-->
+
+        <section class="request-section">
+            <div class="request">
+                <div>
+                    <h2 class="text">Incoming Requests</h2>
+                </div>
+                <a class="seeall-button" href="casespage.html">See All</a>
+            </div>
+            <div id="request-container"></div>
+
+            </sectin>
+            <!--open examine portal-->
+
+            <section class="examineportal-section">
+                <img src="images/vet-picture.png" class="vet-pic">
+                <div class="examination">
+                    <div class="Quick-Action">
+                        <i class="fa-solid fa-bolt"></i>
+                        <span>Quick Action</span>
+                    </div>
+                    <h2 class="examination-title">Start Patient Examination</h2>
+                    <span class="examination-text">Enter the digital consultation room. All clinical
+                        history and lab results are pre-loaded for
+                        your review.</span>
+                    <button class="examination-button" onclick="window.location.href='./casespage.html'">
+                        <span>Open Examine Portal </span>
+                        <i class="fa-solid fa-arrow-right-long"></i>
+
+                    </button>
+                </div>
+            </section>
+
+            <!--footer-->
+
+            <footer class="fotter">
+                <div>© <span id="footer-year"></span> VetHub Practice Management. Powered by Precision Care.</div>
+                <div class="fotter-links">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Support</a>
+                </div>
+            </footer>
+
+            <div id="detailsModal" class="modal hidden">
+                <div class="modal-content">
+                    <span id="closeModal">&times;</span>
+                    <div id="modalBody"></div>
+                </div>
+            </div>
+
+    </div>
+    <!--navigation bar-->
+
+    <!-- Desk Version -->
+    <aside class="desk">
+        <div class="logo">
+            <div class="img"></div>
+            <h3>Vet<span>Hub</span></h3>
+        </div>
+        <ul class="list">
+            <li><a href="./home.html"><i class="fa-solid fa-house"></i>Home</a></li>
+            <li><a href="./casespage.html"><i class="fa-solid fa-briefcase-medical"></i>Vet Report</a></li>
+            <li><a href="./chat.html"><i class="fa-regular fa-message"></i>Chat</a></li>
+            <li><a href="./vetprofile.html"><i class="fa-regular fa-user"></i>Profile</a></li>
+            <li><a href="./setting.html"><i class="fa-solid fa-sliders"></i>Settings</a></li>
+        </ul>
+    </aside>
+
+    <!-- Mobile version -->
+
+    <aside class="mob">
+        <ul class="list">
+            <li><a href="./home.html"><i class="fa-solid fa-house"></i></a></li>
+            <li><a href="./casespage.html"><i class="fa-solid fa-briefcase-medical"></i></a></li>
+            <li><a href="./chat.html"><i class="fa-regular fa-message"></i></a></li>
+            <li><a href="./vetprofile.html"><i class="fa-regular fa-user"></i></a></li>
+            <li><a href="./setting.html"><i class="fa-solid fa-sliders"></i></a></li>
+        </ul>
+    </aside>
+
+    <script src="casepage.js" defer></script>
+    <script src="navbar.js" defer></script>
+</body>
+
+</html>

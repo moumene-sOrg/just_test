@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="UserStep3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap"
+        rel="stylesheet">
+    <title>Step3</title>
+</head>
+<body>
+    <div class="cont">
+        <div class="s2">
+            <div class="levels">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <!-- Start main -->
+        <div class="main">
+            <div class="head">
+                <h1>Master the Mission</h1>
+                <p>Congratulations on completing your registration! You're now part of a dedicated community of pet parents. We're here
+                    to
+                    help you every step of the way as you embark on this rewarding journey.</p>
+            </div>
+            <!-- Start main content -->
+            <div class="content">
+                <!-- Start tips box -->
+                <div class="tips-box2">
+                    <h3><i class="fa-solid fa-lightbulb"></i>RESCUE TIPS</h3>
+                    <div class="img2"></div>
+                        <p><i class="fa-solid fa-check"></i><span>Check Fences:</span> Walk your perimeter to ensure there are no loose boards
+                            or gaps.</p>
+                        <p><i class="fa-solid fa-check"></i><span>Pet-proof the Kitchen:</span> Keep chemicals and toxic foods like chocolate
+                            out of reach.</p>
+                        <p><i class="fa-solid fa-check"></i><span>Identify Local Vets:</span> Save the number of the nearest 24/7 emergency
+                            clinic.</p>
+                </div>
+                <!-- End tips box -->
+                <!-- Start image for phone (it is visiblr just in phone version) -->
+                <div class="phone-image"></div>
+                <!-- End image for phona -->
+                <!-- Start help box -->
+                <div class="help">
+                    <h2><i class="fa-regular fa-circle-question"></i>HOW TO HELP</h2>
+                    <div>
+                        <i class="fa-solid fa-eye"></i><p class="one"><span>Spot & Assess</span><br>Carefully observe your pet's body language and behavior in their new environment.</p>
+                        <i class="fa-solid fa-bullhorn"></i><p class="two"><span>Signal the Team</span><br>Use the app to communicate any concerns or updates with our network of specialists.</p>
+                        <i class="fa-solid fa-arrow-trend-up"></i><p><span>Track Progress</span><br>Monitor health milestones and behavioral improvements through your dashboard.</p>
+                    </div>
+                </div>
+                <!-- End help box -->
+            </div>
+            <!-- End main content -->
+        </div>
+        <!-- End main -->
+        <!-- Start down part -->
+        <div class="down">
+            <button id="finish-btn" class="scd">Go to Dashboard -></button>
+            <p>Need help? <a href="">Contact</a> support or visit our <a href="">FAQ</a>.</p>
+        </div>
+        <!-- End down part -->
+    </div>
+    <script>
+        document.getElementById('finish-btn').addEventListener('click', async (e) => {
+            e.preventDefault();
+            const token = localStorage.getItem('token');
+            try {
+                const response = await fetch('http://localhost:3000/app/signup/userInfo', {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+                if (response.ok) {
+                    window.location.href = '../User-Dashbord/index.html';
+                } else {
+                    const data = await response.json();
+                    alert(data.message || 'Registration completion failed');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Server error. Please try again.');
+            }
+        });
+    </script>
+</body>
+</html>

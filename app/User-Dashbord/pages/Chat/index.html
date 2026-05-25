@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../src/css/style.css" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <!-- Box icons -->
+    <!-- Basic Icons -->
+    <link
+      href="https://cdn.boxicons.com/3.0.8/fonts/basic/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- Filled Icons -->
+    <link
+      href="https://cdn.boxicons.com/3.0.8/fonts/filled/boxicons-filled.min.css"
+      rel="stylesheet"
+    />
+    <!-- Brand Icons -->
+    <link
+      href="https://cdn.boxicons.com/3.0.8/fonts/brands/boxicons-brands.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="stylesheet" href="chat.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <title>Chat</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              'main-blue': '#197FE6',
+              'week-gray': '#F1F5F9',
+              'icons': '#94A3B8',
+              'grey-text': '#475569',
+              primary: "#197fe6",
+              "background-light": "#f6f7f8",
+              "background-dark": "#111921",
+            },
+            fontFamily: {
+              display: ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              "2xl": "1rem",
+              "3xl": "1.5rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+</head>
+<body class="bg-[#F6F7F8] font-display text-slate-900 dark:text-slate-100">
+    <div class="flex h-screen overflow-hidden">
+        <aside
+          class="w-64 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 md:flex flex-col justify-between py-6 px-4 z-10 hidden"
+        >
+          <div class="flex flex-col gap-8">
+            <!-- Logo -->
+            <div class="flex items-center gap-3 px-2">
+              <div class="w-10 h-10 rounded-xl flex items-center justify-center shadow-sm">
+                <img src="../../public/Logo.svg" alt="Logo" class="w-7 h-7 " />
+              </div>
+              <div>
+                <p class="text-sm font-black text-slate-900 leading-tight">Mission Control</p>
+                <p class="text-xs font-semibold text-main-blue leading-tight">Reporter Portal</p>
+              </div>
+            </div>
+
+            <ul
+              class="w-full flex flex-col justify-center items-start gap-1 px-2"
+            >
+              <li class="w-full rounded-xl">
+                <a href="../../index.html">
+                  <div
+                    class="flex flex-row items-center gap-1.5 w-full p-2 rounded-xl"
+                  >
+                    <i class="fa-solid fa-house text-2xl text-icons"></i>
+                    <span class="text-icons text-sm font-medium mt-0.5"
+                      >Home</span
+                    >
+                  </div>
+                </a>
+              </li>
+              <li class="w-full rounded-xl">
+                <a href="../MyReports/index.html">
+                  <div
+                    class="flex flex-row items-center gap-1.5 w-full p-2 rounded-xl"
+                  >
+                    <i class="fa-regular fa-file-lines text-2xl text-icons"></i>
+                    <span class="text-icons text-sm font-medium mt-0.5"
+                      >My Reports</span
+                    >
+                  </div>
+                </a>
+              </li>
+              <li class="w-full rounded-xl">
+                <a href="../Report/index.html">
+                  <div
+                    class="flex flex-row items-center gap-1.5 w-full p-2 rounded-xl"
+                  >
+                    <i class="bx bx-announcement text-3xl text-icons"></i>
+                    <span class="text-icons text-sm font-medium"
+                      >Report Animal</span
+                    >
+                  </div>
+                </a>
+              </li>
+              <li class="w-full rounded-xl active-page-aside">
+                <a href="../Chat/index.html">
+                  <div
+                    class="flex flex-row items-center gap-1.5 w-full p-2 rounded-xl"
+                  >
+                    <i class="bx bx-discussion text-[27px] text-icons active-link"></i>
+                    <span class="text-icons text-sm font-medium active-link">Messages</span>
+                  </div>
+                </a>
+              </li>
+              <li class="w-full rounded-xl">
+                <a href="../profile/index.html">
+                  <div
+                    class="flex flex-row items-center gap-1.5 w-full p-2 rounded-xl"
+                  >
+                    <i class="fa-regular fa-user text-2xl text-icons"></i>
+                    <span class="text-icons text-sm font-medium mt-0.5"
+                      >profile</span
+                    >
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+        </aside>
+        <!-- Start Main Content -->
+        <!-- Start Main Content -->
+        <div class="main flex-1">
+            <div class="side-msg">
+                <h2>Messages</h2>
+                <!-- Start Search -->
+                <form action="">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="search-bar" placeholder="Search Conversations...">
+                </form>
+                <!-- End Search -->
+                <!-- Start Peaple -->
+                <div class="people">
+                    <div class="active person">
+                        <img id="user-img" src="../../SignIn/Images/defaults/user.png" alt="">
+                        <div id="user-info">
+                            <span id="name">Name</span>
+                            <p id="last-msg">can you come visit my pet?</p>
+                        </div>
+                        <span id="time">12:59</span>
+                    </div>
+
+                    <div class="person">
+                        <img id="user-img" src="../../SignIn/Images/defaults/user.png" alt="">
+                        <div id="user-info">
+                            <span id="name">Name</span>
+                            <p id="last-msg">can you come visit my pet?</p>
+                        </div>
+                        <span id="time">12:59</span>
+                    </div>
+
+                    <div class="person">
+                        <img id="user-img" src="../../SignIn/Images/defaults/user.png" alt="">
+                        <div id="user-info">
+                            <span id="name">Name</span>
+                            <p id="last-msg">can you come visit my pet?</p>
+                        </div>
+                        <span id="time">12:59</span>
+                    </div>
+
+                    <div class="person">
+                        <img id="user-img" src="../../SignIn/Images/defaults/user.png" alt="">
+                        <div id="user-info">
+                            <span id="name">Name</span>
+                            <p id="last-msg">can you come visit my pet?</p>
+                        </div>
+                        <span id="time">12:59</span>
+                    </div>
+
+                    <div class="person">
+                        <img id="user-img" src="../../SignIn/Images/defaults/user.png" alt="">
+                        <div id="user-info">
+                            <span id="name">Name</span>
+                            <p id="last-msg">can you come visit my pet?</p>
+                        </div>
+                        <span id="time">12:59</span>
+                    </div>
+
+                    <div class="person">
+                        <img id="user-img" src="../../SignIn/Images/defaults/user.png" alt="">
+                        <div id="user-info">
+                            <span id="name">Name</span>
+                            <p id="last-msg">can you come visit my pet?</p>
+                        </div>
+                        <span id="time">12:59</span>
+                    </div>
+
+                    <div class="person">
+                        <img id="user-img" src="../../SignIn/Images/defaults/user.png" alt="">
+                        <div id="user-info">
+                            <span id="name">Name</span>
+                            <p id="last-msg">can you come visit my pet?</p>
+                        </div>
+                        <span id="time">12:59</span>
+                    </div>
+
+                    <div class="person">
+                        <img id="user-img" src="../../SignIn/Images/defaults/user.png" alt="">
+                        <div id="user-info">
+                            <span id="name">Name</span>
+                            <p id="last-msg">can you come visit my pet?</p>
+                        </div>
+                        <span id="time">12:59</span>
+                    </div>
+                </div>
+                <!-- End People -->
+            </div>
+            <!-- End Side Msg -->
+            <!-- Start Msg box -->
+            <div class="msg-box">
+                <div class="conver-head">
+                    <img id="user-img" src="./images/msg-profile-test.png" alt="">
+                    <div id="user-info">
+                        <span id="name">Name</span>
+                        <p id="state">online</p>
+                    </div>
+                </div>
+                <div class="conversation">
+
+                </div>
+                <div class="conver-typing">
+                    <div class="box">
+                        <i id="att" class="fa-solid fa-plus"></i>
+                        <label class="hide add-files">
+                            <i class="fa-solid fa-paperclip"></i>
+                            <span>Add files or photos</span>
+                            <input type="file" multiple>
+                        </label>
+                        <input type="text" id="search-bar" placeholder="Type your message...">
+                        <i id="emojy" class="fa-regular fa-face-grin"></i>
+                        <button><i class="fa-regular fa-paper-plane fa-rotate-by"></i></button>
+                    </div>
+                </div>
+            </div>
+            <!-- End Msg Box -->
+        </div>
+        <!-- End Main Content -->
+    </div>
+    <nav
+      class="flex fixed bottom-2 justify-between items-center left-4 right-4 bg-white p-4 rounded-3xl shadow-2xl md:hidden z-50"
+    >
+      <a href="../../index.html">
+        <div class="flex flex-col items-center">
+          <i class="fa-solid fa-house text-2xl text-icons"></i>
+          <span class="text-icons text-xs font-medium mt-0.5">Home</span>
+        </div>
+      </a>
+      <a href="../MyReports/index.html">
+        <div class="flex flex-col justify-center items-center">
+          <i class="fa-regular fa-file-lines text-2xl text-icons"></i>
+          <span class="text-icons text-xs font-medium mt-0.5"
+            >My Reports</span
+          >
+        </div>
+      </a>
+      <a href="../Report/index.html">
+        <div class="flex flex-col items-center">
+          <div
+            class="p-0.5 bg-linear-to-r from-main-blue via-[#60A5FA] to-[#34D399] rounded-full"
+          >
+            <div
+              class="circle p-1 rounded-full w-9 h-9 flex justify-center items-center bg-main-blue border-lime-200"
+            >
+              <i class="fa-solid fa-plus text-white"></i>
+            </div>
+          </div>
+        </div>
+      </a>
+      <a href="../Chat/index.html">
+        <div class="flex flex-col justify-center items-center">
+          <i class="bx bx-discussion text-2xl text-icons active-link"></i>
+          <span class="text-icons text-xs font-medium active-link">Messages</span>
+        </div>
+      </a>
+      <a href="../profile/index.html">
+        <div class="flex flex-col justify-center items-center">
+          <i class="fa-regular fa-user text-2xl text-icons"></i>
+          <span class="text-icons text-xs font-medium mt-0.5">profile</span>
+        </div>
+      </a>
+    </nav>
+    <!-- JS File -->
+    <script src="./Home.js"></script>
+</body>
+</html>

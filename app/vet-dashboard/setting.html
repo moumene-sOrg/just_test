@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>settings page</title>
+    <link rel="stylesheet" href="home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body class="settings-page">
+
+    <!--header section-->
+    <div class="half-page">
+        <header class="header">
+            <div class="half-left">
+                <img src="images/logo.png" alt="Logo" class="logo-image">
+                <div class="vet-info">
+                    <h4 class="vet-name">Professional Settings</h4>
+                </div>
+            </div>
+        </header>
+
+        <!--setting title desktop-->
+        <section class="desktop-header">
+            <h1>Professional Settings</h1>
+            <span>Manage your clinical identity, security preferences, and operational hours.</span>
+        </section>
+
+        <!--change password section-->
+
+        <section class="changepassword-section">
+            <div class="settings-tilte">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h4>Account Security</h4>
+            </div>
+            <div class="change-password">
+                <div class="half-left-password">
+                    <i class="fa-solid fa-lock"></i>
+                    <div>
+                        <h4 class="tilte-password">Change Password</h4>
+                        <span class="last-update" id="last-update-text">Last update 45 days ago</span>
+                    </div>
+                </div>
+                <button class="update-button" id="show-password-form">Update</button>
+            </div>
+
+            <div id="password-form-container" style="display: none; padding-top: 15px; margin-left: 45px; display: flex; flex-direction: column; gap: 10px; width: 250px;">
+                <input type="password" id="old-password" placeholder="Enter old password" style="padding: 8px; border-radius: 4px; border: 1px solid #ccc; font-family: inherit;">
+                <input type="password" id="new-password" placeholder="Enter new password" style="padding: 8px; border-radius: 4px; border: 1px solid #ccc; font-family: inherit;">
+                <button id="save-password-btn" style="padding: 8px 15px; border-radius: 4px; border: none; background: #137FEC; color: white; font-family: inherit; font-weight: bold; cursor: pointer;">Save Password</button>
+            </div>
+
+        </section>
+
+        <section class="changepassword-section" style="margin-top: 20px;">
+            <div class="settings-tilte">
+                <i class="fa-solid fa-building"></i>
+                <h4>Clinic Details</h4>
+            </div>
+            <div class="change-password" style="border:none; padding-bottom: 0; align-items: start;">
+                <div class="half-left-password" style="width: 100%;">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div style="width: 100%;">
+                        <h4 class="tilte-password">Clinic Address</h4>
+                        <input type="text" id="vet-address-input" placeholder="Loading address..." style="margin-top: 10px; width: calc(100% - 20px); padding: 8px; border-radius: 4px; border: 1px solid #ccc; font-family: inherit;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!---->
+        <section class="save-section">
+            <button class="print-button" id="discard-button">Discard </button>
+            <button class="savereport-button" id="save-address-btn">Save Changes </button>
+        </section>
+        <div class="singout">
+            <button class="singout-button">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Sign Out</span>
+            </button>
+        </div>
+
+    </div>
+    <!--navigation bar-->
+
+    <!-- Desk Version -->
+    <aside class="desk">
+        <div class="logo">
+            <div class="img"></div>
+            <h3>Vet<span>Hub</span></h3>
+        </div>
+        <ul class="list">
+            <li><a href="./home.html"><i class="fa-solid fa-house"></i>Home</a></li>
+            <li><a href="./casespage.html"><i class="fa-solid fa-briefcase-medical"></i>Vet Report</a></li>
+            <li><a href="./chat.html"><i class="fa-regular fa-message"></i>Chat</a></li>
+            <li><a href="./vetprofile.html"><i class="fa-regular fa-user"></i>Profile</a></li>
+            <li><a href="./setting.html"><i class="fa-solid fa-sliders"></i>Settings</a></li>
+        </ul>
+    </aside>
+
+    <!-- Mobile version -->
+
+    <aside class="mob">
+        <ul class="list">
+            <li><a href="./home.html"><i class="fa-solid fa-house"></i></a></li>
+            <li><a href="./casespage.html"><i class="fa-solid fa-briefcase-medical"></i></a></li>
+            <li><a href="#"><i class="fa-regular fa-message"></i></a></li>
+            <li><a href="./vetprofile.html"><i class="fa-regular fa-user"></i></a></li>
+            <li><a href="./setting.html"><i class="fa-solid fa-sliders"></i></a></li>
+        </ul>
+    </aside>
+
+    <script src="setting.js" defer></script>
+</body>
+
+</html>

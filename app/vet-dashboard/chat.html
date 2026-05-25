@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Css File -->
+    <link rel="stylesheet" href="Home.css">
+    <link rel="stylesheet" href="chat.css">
+    <title>Chat</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Start Side Bar -->
+        <!-- Desk Version -->
+        <aside class="desk">
+            <div class="logo">
+                <div class="img"></div>
+                <h3>Vet<span>Hub</span></h3>
+            </div>
+            <ul class="list">
+                <li><a href="./home.html"><i class="fa-regular fa-house"></i>Home</a></li>
+                <li><a href="./casespage.html"><i class="fa-solid fa-briefcase-medical"></i>Vet Report</a></li>
+                <li class="active"><a href="./chat.html"><i class="fa-regular fa-message"></i>Chat</a></li>
+                <li><a href="./vetprofile.html"><i class="fa-regular fa-user"></i>Profile</a></li>
+                <li><a href="./setting.html"><i class="fa-solid fa-sliders"></i>Settings</a></li>
+            </ul>
+        </aside>
+        <!-- Mobile version -->
+        <aside class="mob">
+            <ul class="list">
+                <li><a href="./home.html"><i class="fa-regular fa-house"></i></a></li>
+                <li><a href="./casespage.html"><i class="fa-solid fa-briefcase-medical"></i></a></li>
+                <li class="active"><a href="./chat.html"><i class="fa-regular fa-message"></i></a></li>
+                <li><a href="./vetprofile.html"><i class="fa-regular fa-user"></i></a></li>
+                <li><a href="./setting.html"><i class="fa-solid fa-sliders"></i></a></li>
+            </ul>
+        </aside>
+        <!-- End Side Bar -->
+        <!-- Start Main Content -->
+        <div class="main">
+            <div class="side-msg">
+                <h2>Messages</h2>
+                <!-- Start Search -->
+                <form action="">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="search-bar" placeholder="Search Conversations...">
+                </form>
+                <!-- End Search -->
+                <!-- Start Peaple -->
+                <div class="people">
+                    <div class="active person">
+                        <img id="user-img" src="./images/msg-profile-test.png" alt="">
+                        <div id="user-info">
+                            <span id="name">Name</span>
+                            <p id="last-msg">can you come visit my pet?</p>
+                        </div>
+                        <span id="time">12:59</span>
+                    </div>
+
+                    <div class="person">
+                        <img id="user-img" src="./images/msg-profile-test.png" alt="">
+                        <div id="user-info">
+                            <span id="name">Name</span>
+                            <p id="last-msg">can you come visit my pet?</p>
+                        </div>
+                        <span id="time">12:59</span>
+                    </div>
+
+                    <div class="person">
+                        <img id="user-img" src="./images/msg-profile-test.png" alt="">
+                        <div id="user-info">
+                            <span id="name">Name</span>
+                            <p id="last-msg">can you come visit my pet?</p>
+                        </div>
+                        <span id="time">12:59</span>
+                    </div>
+
+                    <div class="person">
+                        <img id="user-img" src="./images/msg-profile-test.png" alt="">
+                        <div id="user-info">
+                            <span id="name">Name</span>
+                            <p id="last-msg">can you come visit my pet?</p>
+                        </div>
+                        <span id="time">12:59</span>
+                    </div>
+
+                    <div class="person">
+                        <img id="user-img" src="./images/msg-profile-test.png" alt="">
+                        <div id="user-info">
+                            <span id="name">Name</span>
+                            <p id="last-msg">can you come visit my pet?</p>
+                        </div>
+                        <span id="time">12:59</span>
+                    </div>
+
+                    <div class="person">
+                        <img id="user-img" src="./images/msg-profile-test.png" alt="">
+                        <div id="user-info">
+                            <span id="name">Name</span>
+                            <p id="last-msg">can you come visit my pet?</p>
+                        </div>
+                        <span id="time">12:59</span>
+                    </div>
+
+                    <div class="person">
+                        <img id="user-img" src="./images/msg-profile-test.png" alt="">
+                        <div id="user-info">
+                            <span id="name">Name</span>
+                            <p id="last-msg">can you come visit my pet?</p>
+                        </div>
+                        <span id="time">12:59</span>
+                    </div>
+
+                    <div class="person">
+                        <img id="user-img" src="./images/msg-profile-test.png" alt="">
+                        <div id="user-info">
+                            <span id="name">Name</span>
+                            <p id="last-msg">can you come visit my pet?</p>
+                        </div>
+                        <span id="time">12:59</span>
+                    </div>
+                </div>
+                <!-- End People -->
+            </div>
+            <!-- End Side Msg -->
+            <!-- Start Msg box -->
+            <div class="msg-box">
+                <div class="conver-head">
+                    <img id="user-img" src="./images/msg-profile-test.png" alt="">
+                    <div id="user-info">
+                        <span id="name">Name</span>
+                        <p id="state">online</p>
+                    </div>
+                </div>
+                <div class="conversation">
+
+                </div>
+                <div class="conver-typing">
+                    <div class="box">
+                        <i id="att" class="fa-solid fa-plus"></i>
+                        <label class="hide add-files">
+                            <i class="fa-solid fa-paperclip"></i>
+                            <span>Add files or photos</span>
+                            <input type="file" multiple>
+                        </label>
+                        <input type="text" id="search-bar" placeholder="Type your message...">
+                        <i id="emojy" class="fa-regular fa-face-grin"></i>
+                        <button><i class="fa-regular fa-paper-plane fa-rotate-by"></i></button>
+                    </div>
+                </div>
+            </div>
+            <!-- End Msg Box -->
+        </div>
+        <!-- End Main Content -->
+    </div>
+    <!-- End Container -->
+    <!-- JS File -->
+    <script src="./Home.js"></script>
+</body>
+</html>

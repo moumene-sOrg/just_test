@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="Home.css">
+    <link rel="stylesheet" href="Settings.css">
+    <title>Setings</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Start Side Bar -->
+        <!-- Desk Version -->
+        <aside class="desk">
+            <div class="logo">
+                <div class="img"></div>
+                <h3>Refuge<span>Hub</span></h3>
+            </div>
+            <ul class="list">
+                <li><a href="./Home.html"><i class="fa-regular fa-house"></i>Home</a></li>
+                <li><a href="./Requests.html"><i class="fa-regular fa-file-lines"></i>Requests</a></li>
+                <li><a href="./AdoptedAnimals.html"><i class="fa-solid fa-paw"></i>AdoptedAnimals</a></li>
+                <li><a href="./Vet-reports.html"><i class="fa-solid fa-briefcase-medical"></i>Vet Report</a></li>
+                <li><a href="./chat.html"><i class="fa-regular fa-message"></i>Chat</a></li>
+                <li><a href="./Profile.html"><i class="fa-regular fa-user"></i>Profile</a></li>
+                <li class="active"><a href="./Settings.html"><i class="fa-solid fa-sliders"></i>Settings</a></li>
+            </ul>
+        </aside>
+        <!-- Mobile version -->
+        <aside class="mob">
+            <ul class="list">
+                <li><a href="./Home.html"><i class="fa-regular fa-house"></i></a></li>
+                <li><a href="./Requests.html"><i class="fa-regular fa-file-lines"></i></a></li>
+                <li><a href="./AdoptedAnimals.html"><i class="fa-solid fa-paw"></i></a></li>
+                <li><a href="./Vet-reports.html"><i class="fa-solid fa-briefcase-medical"></i></a></li>
+                <li><a href="./chat.html"><i class="fa-regular fa-message"></i></a></li>
+                <li><a href="./Profile.html"><i class="fa-regular fa-user"></i></a></li>
+                <li class="active"><a href="./Settings.html"><i class="fa-solid fa-sliders"></i></a></li>
+            </ul>
+        </aside>
+        <!-- End Side Bar -->
+        <!-- Start Main Content -->
+        <div class="main">
+            <!-- Start Title -->
+            <div class="title">
+                <h2>Facility Settings</h2>
+                <p>Manage your refuge account and facility configurations.</p>
+            </div>
+            <!-- End Title -->
+            <!-- Start Password Section -->
+            <div class="pass">
+                <h2><i class="fa-solid fa-shield-halved"></i>Account Security</h2>
+                <div class="change-pass">
+                    <h3>Change Password</h3>
+                    <p>Update your login credentials to keep your account secure. We recommend a strong, unique password.</p>
+                    <input type="password" placeholder="Enter your old password" id="old-pass" style="display: none; margin-bottom: 15px;">
+                    <input type="password" placeholder="Enter your new password" id="new-pass">
+                    <button id="update">Update Password</button>
+                </div>
+            </div>
+            <!-- End Password Section -->
+            <!-- Start Details Section -->
+            <h2><i id="building" class="fa-solid fa-building"></i>Facility Details</h2>
+            <div class="info-det" id="info-det">
+                <h3>Info</h3>
+                <div class="info">
+                    <form action="">
+                        <label for="#name">Facility Name</label>
+                        <input type="text" id="name">
+                    </form>
+                    <form action="">
+                        <label for="#contact">Contact Email</label>
+                        <input type="text" id="contact">
+                    </form>
+                    <form action="">
+                        <label for="#add">Street Address</label>
+                        <input type="text" id="add">
+                    </form>
+                </div>
+                <h3>Details</h3>
+                <div class="detail">
+                    <form action="">
+                        <label for="#maxcap">Max Hosting Capacity</label>
+                        <input type="text" id="maxcap">
+                    </form>
+                    <form action="">
+                        <label for="#cap">Current Occupancy</label>
+                        <input type="text" id="cap">
+                    </form>
+                    <form action="">
+                        <label>Operating Hours</label>
+                        <div class="start-end-hours">
+                            <input type="time" id="open" name="refuge-open" value="08:00" />
+                            <input type="time" id="close" name="refuge-close" value="18:00" />
+                        </div>
+                    </form>
+                </div>
+                <div class="btns">
+                    <button id="cancel">Cancel</button>
+                    <button id="save">Save Changes</button>
+                </div>
+            </div>
+            <!-- End Details Section -->
+            <!-- Start Log out part -->
+            <button id="log-out"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</button>
+        </div>
+        <!-- End Main Content -->
+        <!-- JS File -->
+        <script src="Settings.js"></script>
+</body>
+</html>

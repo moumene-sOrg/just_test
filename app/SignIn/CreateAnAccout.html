@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreateAnAccount</title>
+    <!-- CSS File -->
+    <link rel="stylesheet" href="CreateAnAccount.css">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Start left Side -->
+        <div class="left-side">
+            <h2><div class="img"></div>Rescue<span>Connect</span></h2>
+            <div class="dog-img"></div>
+            <h2>Master the Mission</h2>
+            <p>You're joining a network of over 2,400+ rescuers worldwide. Every profile helps save more lives.</p>
+            <div class="tips-box">
+                <p><i class="fa-solid fa-lightbulb"></i> RESCUE TIPS</p>
+                <p><i class="fa-solid fa-check"></i><span>Safety First:</span> Never put yourself in danger to reach an animal.</p>
+                <p><i class="fa-solid fa-check"></i><span>Gather Info:</span> Note breed, color, and behavior details.</p>
+            </div>
+            <p class="last">© 2024 RescueConnect. Building a safer world for paws.</p>
+        </div>
+        <!-- End left Side -->
+        <!-- Start Right Side -->
+        <div class="right-side">
+            <div class="steps">
+                <div class="fst"></div>
+                <div class="scd"></div>
+                <div class="thd"></div>
+            </div>
+            <h1>Create your profile <div class="logo"></div></h1>
+            <p class="p1">Provide your details to help us coordinate animal rescue and welfare efforts in your local community.</p>
+            <div class="full-name">
+                <form action="">
+                    <label for="fst-name">First Name</label>
+                    <input type="text" placeholder="First Name" id="fst-name">
+                </form>
+                <form action="">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" placeholder="Last Name" id="last-name">
+                </form>
+            </div>
+            <form action="">
+                <label for="Email">Email Address</label>
+                <input type="email" placeholder="Your Email" id="Email">
+            </form>
+            <form action="">
+                <label for="pass">Password</label>
+                <input type="password" placeholder="Your Password" id="pass">
+            </form>
+            <form action="">
+                <label for="location">Location (City / Postal Code)</label>
+                <input type="text" placeholder="Your Location" id="location">
+            </form>
+            <a href="ChoosingTypePage.html"><button>Create Account</button></a>
+            <p>Already have an account? <a href="SignInPage.html">Log in</a></p>
+        </div>
+        <!-- End Right Side -->
+    </div>
+
+    <!-- Required fullname,Email,Password and Location -->
+    <script>
+        document.querySelector("a[href='ChoosingTypePage.html']").addEventListener("click", async function (event) {
+            event.preventDefault(); // Always prevent default to handle fetch
+
+            const firstName = document.getElementById("fst-name");
+            const lastName = document.getElementById("last-name");
+            const email = document.getElementById("Email");
+            const pass = document.getElementById("pass");
+            const locationField = document.getElementById("location");
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+
+            if (firstName.value.trim() === "") {
+                firstName.reportValidity();
+                return;
+            }
+
+            if (lastName.value.trim() === "") {
+                lastName.reportValidity();
+                return;
+            }
+
+            if (!emailPattern.test(email.value)) {
+                email.reportValidity();
+                return;
+            }
+
+            if (pass.value.trim() === "") {
+                pass.reportValidity();
+                return;
+            }
+
+            if (locationField.value.trim() === "") {
+                locationField.reportValidity();
+                return;
+            }
+
+            try {
+                const response = await fetch('http://localhost:3000/app/signup', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        email: email.value.trim(),
+                        pass_word: pass.value.trim(),
+                        first_name: firstName.value.trim(),
+                        last_name: lastName.value.trim(),
+                        location: locationField.value.trim()
+                    })
+                });
+                const data = await response.json();
+
+                if (response.ok) {
+                    localStorage.setItem('token', data.token);
+                    window.location.href = "ChoosingTypePage.html";
+                } else {
+                    alert(data.message || 'Signup failed');
+                }
+            } catch (error) {
+                alert('Server error. Please try again.');
+                console.error('Error:', error);
+            }
+        });
+    </script>
+</body>
+</html>

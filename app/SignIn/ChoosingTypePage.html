@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!--CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="SingnInAndChoosingTypesStyles.css">
+</head>
+<body>
+    <!--header section-->
+    <section class="header-desktop">
+    <div class="header-left">
+        <img src="Images/logo.png" alt="logo">
+        <span>AnimalLink</span>
+    </div>
+    <div class="header-right">
+        <a href="#">Help</a>
+        <a href="SignInPage.html">Sign In</a>
+    </div>
+    </section>
+
+    <!-- Steps Section -->
+    <section class="steps-section">
+
+        <div class="steps-text">
+            <div class="step-number">Step 2 of 3</div>
+            <div class="step-text">Personal Roles</div>
+        </div>
+        <!-- desktop -->
+         <div class="progress-container">
+         <div class="progress-complete"></div>
+         <div class="progress-complete"></div>
+         <div class="progress-incomplete"></div>
+         </div>
+
+        <!--mobile-->
+        <div class="progress-bar">
+            <div class="step-complete"></div>
+        </div>
+
+    </section>
+
+    <!--text section-->
+    <section class="text-section">
+        <h2  class="title">Create your account</h2>
+        <span>Choose the role that best describes you to get
+         started with animal welfare management. and community rescue
+        </span>
+    </section>
+
+    <!--users section-->
+           <!--Individual-->
+           <section class="boxes">
+  <section class="container">
+
+  <input type="radio" id="role1" name="role" value="UserStep3.html">
+
+  <label for="role1" class="card">
+    <div class="card-content">
+
+      <div class="left">
+        <div class="icon-box">
+          <i class="fa-regular fa-user"></i>
+        </div>
+
+        <div class="text-card">
+          <h3>Individual</h3>
+          <p>Report stray animals, track local
+           welfare, and volunteer in your
+           community.</p>
+        </div>
+      </div>
+
+      <div class="radio-circle"></div>
+
+    </div>
+  </label>
+
+</section>
+        <!--vet-->
+
+     <section class="container">
+
+  <input type="radio" id="role2" name="role" value="vet-sign-up.html">
+
+  <label for="role2" class="card">
+    <div class="card-content">
+
+      <div class="left">
+        <div class="icon-box">
+          <i class="fa-solid fa-briefcase-medical"></i>
+        </div>
+
+        <div class="text-card">
+          <h3>Veterinarian</h3>
+          <p>Manage clinical records,
+           coordinate with rescues, and offer
+           emergency aid.</p>
+        </div>
+      </div>
+
+      <div class="radio-circle"></div>
+
+    </div>
+  </label>
+
+</section>
+      <!--Refuge-->
+ <section class="container">
+
+  <input type="radio" id="role3" name="role" value="refuge-sign-up.html">
+
+  <label for="role3" class="card">
+    <div class="card-content">
+
+      <div class="left">
+        <div class="icon-box">
+          <i class="fa-solid fa-house-medical"></i>
+        </div>
+
+        <div class="text-card">
+          <h3>Refuge / Shelter</h3>
+          <p>Handle intake requests, manage
+          capacity, and track animal
+            recovery status.</p>
+        </div>
+      </div>
+
+      <div class="radio-circle"></div>
+
+    </div>
+  </label>
+</section>
+           </section>
+       <!--next button -->
+  <section class="login-button">
+        <button>Next &#8594;</button>
+    </section>
+
+       <!--step1-->
+            <a href="CreateAnAccout.html" class="step1-link"> &larr; Back to step 1</a>
+
+        <!--footer-->
+        <footer>
+      <p class="footer-bottom">&copy; 2026 AnimaLink Rescue Network. All rights reserved.</p>
+        </footer>
+
+<script src="choosingType.js"></script>
+
+</body>
+
+</html>

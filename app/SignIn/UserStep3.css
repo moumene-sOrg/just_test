@@ -1,0 +1,274 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Bricolage Grotesque", sans-serif;
+}
+:root {
+    --blue-color: #197FE6;
+    --lightblue-color: #E9F3FF;
+    ---yellowcard: #FFF9EC;
+    --yellowaccents-color: #F5B942;
+    --gray: #6B6B6B;
+    --brown: #7A4B27;
+}
+body {
+    background-color: var(--lightblue-color);
+}
+.cont{
+    background-color: white;
+    width: 90%;
+    box-shadow: 0 0 30px 10px rgb(222, 222, 222);
+    border-radius: 10px;
+    position: relative;
+    left: 5%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.cont .s2{
+    background-color: rgba(231, 231, 231, 0.737);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.cont .s2 .levels{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    position: relative;
+    flex-direction: row;
+    align-items: flex-end;
+}
+.levels::before {
+    content: "STEP 3 OF 3";
+    position: absolute;
+    top: 15px;
+    color: var(--blue-color);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.levels::after {
+    content: "Welcome Home";
+    position: absolute;
+    top: 15px;
+    right: 0;
+    color: var(--gray);
+    font-size: 14px;
+}
+.cont .levels {
+    width: 95%;
+    height: 50px;
+}
+.cont .s2 .levels div{
+    width: calc(100%/3);
+    height: 5px;
+    background-color: var(--blue-color);
+    border-radius: 5px;
+}
+.cont .main{
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.cont .main .head{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+.cont .main .head p{
+    width: 60%;
+    color: var(--gray);
+}
+.cont .main .content{
+    display: flex;
+}
+/* Start Tips box */
+.cont .main .content .tips-box2{
+    flex-basis: 50%;
+    height: 550px;
+    background-color: var(---yellowcard);
+    padding: 25px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--brown);
+}
+.cont .main .content .tips-box2 h3 i{
+    color: white;
+    background-color: var(--yellowaccents-color);
+    padding: 5px;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+.cont .main .content .tips-box2 .img2 {
+    background-image: url(./Images/dog2.png);
+    background-size: cover;
+    width: 100%;
+    height: 50%;
+    border-radius: 10px;
+}
+.cont .main .content .tips-box2 p{
+    color: var(--brown);
+}
+.cont .main .content .tips-box2 p i{
+    color: white;
+    background-color: var(--yellowaccents-color);
+    padding: 2px;
+    border-radius: 10px;
+    margin-right: 5px;
+}
+.cont .main .content .tips-box2 span{
+    font-weight: bold;
+}
+/* End Tips box */
+/* Strat Help */
+.cont .main .content .help {
+    height: 550px;
+    flex-basis: 50%;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.cont .main .content .help h2{
+    margin-bottom: 30px;
+}
+.cont .main .content .help i{
+    color: white;
+    background-color: var(--blue-color);
+    padding: 5px 3px 6px 3px;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+.cont .main .content .help span{
+    font-weight: bold;
+    line-height: 3;
+}
+.cont .main .content .help p{
+    position: relative;
+    left: 70px;
+    top: -65px;
+}
+.cont .main .content .help div{
+    display: flex;
+    flex-direction: column;
+}
+.cont .main .content .help div i{
+    color: white;
+    background-color: var(--blue-color);
+    border-radius: 50px;
+    padding: 15px 31px 14px 13px;
+    margin-right: 20px;
+    box-shadow: 0px 5px 15px #1677ff52;
+    z-index: 99;
+}
+.cont .main .content .help div p.one::before,
+.cont .main .content .help div p.two::before{
+    content: "";
+    position: absolute;
+    width: 2px;
+    background-color: #b3d3ff;
+    height: 180px;
+    left: -50px;
+    bottom: -120px;
+}
+/* End Help */
+/* Start Down part */
+.cont .down{
+    width: 100%;
+    background-color: var(--lightblue-color);
+    padding-bottom: 20px;
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.cont .down a{
+    width: 90%;
+    margin-top: 10px;
+}
+.cont .down button{
+    width: 100%;
+    background-color: var(--blue-color);
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    transition: .3s;
+    box-shadow: 0 10px 10px 0 rgb(219, 219, 219);
+}
+.cont .down button:hover{
+    background-color: #1556b1;
+}
+.cont .down p{
+    color: var(--gray);
+}
+.cont .down p a{
+    color: var(--blue-color);
+    text-decoration: none;
+}
+.cont .down p a:hover{
+    color: #1556b1;
+    text-decoration: underline;
+}
+/* End Down part */
+/* Mobile version */
+@media only screen and (max-width: 600px) {
+    body{
+        font-size: 12px;
+    }
+        .cont .main{
+            padding: 20px;
+        }
+    .cont .content{
+        flex-direction: column;
+    }
+    .cont .main .content .help p{
+        left: 50px;
+        width: 80%;
+    }
+    .cont .main .head p{
+        width: 100%;
+    }
+        .cont .main .content .help div p.one::before,
+        .cont .main .content .help div p.two::before {
+            content: "";
+            position: absolute;
+            width: 2px;
+            background-color: #b3d3ff;
+            height: 135px;
+            left: -30px;
+            bottom: -120px;
+        }
+        .cont .main .content .tips-box2{
+            line-height: 2;
+        }
+        .cont .main .content .tips-box2 .img2{
+            display: none;
+        }
+        .cont .main .content .phone-image{
+            background-image: url(./Images/dog2.png);
+            background-size: cover;
+            width: 100%;
+            height: 250px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+}
+

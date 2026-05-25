@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="Requests.css">
+    <link rel="stylesheet" href="Home.css">
+    <link rel="stylesheet" href="AdoptedAnimals.css">
+    <title>AdoptedAnimals</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Start Side Bar -->
+        <!-- Desk Version -->
+        <aside class="desk">
+            <div class="logo">
+                <div class="img"></div>
+                <h3>Refuge<span>Hub</span></h3>
+            </div>
+            <ul class="list">
+                <li><a href="./Home.html"><i class="fa-regular fa-house"></i>Home</a></li>
+                <li><a href="./Requests.html"><i class="fa-regular fa-file-lines"></i>Requests</a></li>
+                <li class="active"><a href="./AdoptedAnimals.html"><i class="fa-solid fa-paw"></i>AdoptedAnimals</a></li>
+                <li><a href="./Vet-reports.html"><i class="fa-solid fa-briefcase-medical"></i>Vet Report</a></li>
+                <li><a href="./chat.html"><i class="fa-regular fa-message"></i>Chat</a></li>
+                <li><a href="./Profile.html"><i class="fa-regular fa-user"></i>Profile</a></li>
+                <li><a href="./Settings.html"><i class="fa-solid fa-sliders"></i>Settings</a></li>
+            </ul>
+        </aside>
+        <!-- Mobile version -->
+        <aside class="mob">
+            <ul class="list">
+                <li><a href="./Home.html"><i class="fa-regular fa-house"></i></a></li>
+                <li><a href="./Requests.html"><i class="fa-regular fa-file-lines"></i></a></li>
+                <li class="active"><a href="./AdoptedAnimals.html"><i class="fa-solid fa-paw"></i></a></li>
+                <li><a href="./Vet-reports.html"><i class="fa-solid fa-briefcase-medical"></i></a></li>
+                <li><a href="./chat.html"><i class="fa-regular fa-message"></i></a></li>
+                <li><a href="./Profile.html"><i class="fa-regular fa-user"></i></a></li>
+                <li><a href="./Settings.html"><i class="fa-solid fa-sliders"></i></a></li>
+            </ul>
+        </aside>
+        <!-- End Side Bar -->
+        <!-- Start Main Content -->
+        <div class="main">
+            <!-- Start Title -->
+            <div class="title">
+                <h2>Adoption History</h2>
+                <p>View record of all successful animal adoptions.</p>
+            </div>
+            <!-- End Title -->
+            <!-- Start Search Section -->
+            <div class="search">
+                <form action="">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="search-bar" placeholder="Search animals by name or category...">
+                </form>
+                <ul id="list">
+                    <li class="active">All</li>
+                    <li>Cats</li>
+                    <li>Dogs</li>
+                    <li>Birds</li>
+                    <li>Rabbits</li>
+                    <li>Others</li>
+                </ul>
+            </div>
+            <!-- End Search Section -->
+            <!-- Start Requests Table -->
+            <div class="req-table">
+                <h2>Shelter Requests</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ANIMAL</th>
+                            <th>TYPE</th>
+                            <th>Adoption Date</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dynamically populated by AdoptedAnimals.js -->
+                    </tbody>
+                </table>
+            </div>
+            <!-- End Requsts Table -->
+            <!-- Start Next Table Part -->
+            <div class="next-pages" style="display: flex; justify-content: flex-end; gap: 30px; margin-top: 20px;">
+                <a href="#" id="prev-page"><i class="fa-solid fa-angle-left"></i></a>
+                <a href="#" id="next-page"><i class="fa-solid fa-angle-right"></i></a>
+            </div>
+            <!-- End Next Table -->
+        </div>
+        <!-- Start Popup -->
+        <div id="overlay" class="overlay"></div>
+        <div id="popup" class="popup">
+            <h3>Animal information</h3>
+            <div class="content">
+                <div class="image">
+                    <img src="./images/popup-profile.jpg" alt="">
+                </div>
+                <hr>
+                <div class="animal-info">
+                    <div>
+                        <span>Animal ID</span>
+                        <p id="popup-id"></p>
+                    </div>
+                    <div>
+                        <span>Type</span>
+                        <p id="popup-type"></p>
+                    </div>
+                    <div>
+                        <span>Status</span>
+                        <p id="popup-status"></p>
+                    </div>
+                    <div>
+                        <span>Location / Status Details</span>
+                        <p id="popup-location"></p>
+                    </div>
+                </div>
+            </div>
+            <i id="close-x" class="fa-solid fa-xmark"></i>
+            <button id="close-btn">Close</button>
+        </div>
+        <!-- End Popup -->
+    </div>
+    <!-- JS File -->
+    <script src="AdoptedAnimals.js"></script>
+</body>
+</html>

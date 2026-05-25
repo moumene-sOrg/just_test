@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="Vet-reports.css">
+    <link rel="stylesheet" href="Requests.css">
+    <link rel="stylesheet" href="Home.css">
+    <title>Vet-Reports</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Start Side Bar -->
+        <!-- Desk Version -->
+        <aside class="desk">
+            <div class="logo">
+                <div class="img"></div>
+                <h3>Refuge<span>Hub</span></h3>
+            </div>
+            <ul class="list">
+                <li><a href="./Home.html"><i class="fa-regular fa-house"></i>Home</a></li>
+                <li><a href="./Requests.html"><i class="fa-regular fa-file-lines"></i>Requests</a></li>
+                <li><a href="./AdoptedAnimals.html"><i class="fa-solid fa-paw"></i>AdoptedAnimals</a></li>
+                <li class="active"><a href="./Vet-reports.html"><i class="fa-solid fa-briefcase-medical"></i>Vet Report</a></li>
+                <li><a href="./chat.html"><i class="fa-regular fa-message"></i>Chat</a></li>
+                <li><a href="./Profile.html"><i class="fa-regular fa-user"></i>Profile</a></li>
+                <li><a href="./Settings.html"><i class="fa-solid fa-sliders"></i>Settings</a></li>
+            </ul>
+        </aside>
+        <!-- Mobile version -->
+        <aside class="mob">
+            <ul class="list">
+                <li><a href="./Home.html"><i class="fa-regular fa-house"></i></a></li>
+                <li><a href="./Requests.html"><i class="fa-regular fa-file-lines"></i></a></li>
+                <li><a href="./AdoptedAnimals.html"><i class="fa-solid fa-paw"></i></a></li>
+                <li class="active"><a href="./Vet-reports.html"><i class="fa-solid fa-briefcase-medical"></i></a></li>
+                <li><a href="./chat.html"><i class="fa-regular fa-message"></i></a></li>
+                <li><a href="./Profile.html"><i class="fa-regular fa-user"></i></a></li>
+                <li><a href="./Settings.html"><i class="fa-solid fa-sliders"></i></a></li>
+            </ul>
+        </aside>
+        <!-- End Side Bar -->
+        <!-- Start Main Content -->
+        <div class="main">
+            <!-- Start Title -->
+            <div class="title">
+                <h2>Veterinary Clinical Reports</h2>
+                <p>Review and manage clinical evaluations submitted by staff veterinarians.</p>
+            </div>
+            <!-- End Title -->
+            <!-- Start Search Section -->
+            <div class="search">
+                <form action="">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="search-bar" placeholder="Search by Animal ID, Vet Name , or Diagnosis...">
+                </form>
+                <div class="filter">
+                    <button><i class="fa-solid fa-filter"></i><span>Filter</span></button>
+                    <ul class="filter-list">
+                        <li>ID</li>
+                        <li>VET</li>
+                        <li>DATE</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- End Search Section -->
+            <!-- Start Tab-Rep Section -->
+            <div class="tab-rep">
+                <!-- Start Requests Table -->
+                <div class="req-table">
+                    <h2>Shelter Requests</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Animal ID</th>
+                                <th>Vet Name</th>
+                                <th>Diagnosis</th>
+                                <th>Date Submitted</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <!-- Dynamically filled by Vet-reports.js -->
+
+                        </tbody>
+                    </table>
+                </div>
+                <!-- End Requsts Table -->
+                <!-- Start Report Section -->
+                <div class="report">
+                    <div class="head">
+                        <h4 id="rep-title">Clinical Report: --</h4><i class="fa-solid fa-notes-medical"></i>
+                    </div>
+                    <div class="information">
+                        <div class="info">
+                            <p><span>PATIENT</span><strong id="rep-patient">--</strong></p>
+                            <p><span>SUBMISSION DATE</span><strong id="rep-date">--</strong></p>
+                            <p><span>ATTENDING VETERINARIAN</span><strong id="rep-vet">--</strong></p>
+                        </div>
+                        <div class="description">
+                            <span>DIAGNOSIS SUMMARY</span>
+                            <p id="rep-diag">Select a report from the table to view the diagnosis.</p>
+
+                            <span>TREATMENT / PLAN</span>
+                            <p id="rep-treat">--</p>
+
+                            <span style="display: block; margin-top: 15px;">NOTES</span>
+                            <p id="rep-notes">--</p>
+                        </div>
+                        <div class="shelter">
+                            <div class="left">
+                                <i class="fa-solid fa-house-medical"></i>
+                                <p>REQUIRES SHELTER PLACEMENT <span id="rep-placement">--</span></p>
+                            </div>
+                        </div>
+                        <div class="btns">
+                            <button id="print" style="margin-left: auto;"><i class="fa-solid fa-print"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- End report Section -->
+            </div>
+            <!-- End Tab-Rep Section -->
+            <!-- Start Next Table Part -->
+            <div class="next-pages" style="display: flex; justify-content: flex-end; gap: 30px; margin-top: 20px;">
+                <a href="#" id="prev-page"><i class="fa-solid fa-angle-left"></i></a>
+                <a href="#" id="next-page"><i class="fa-solid fa-angle-right"></i></a>
+            </div>
+            <!-- End Next Table -->
+        </div>
+        <!-- End Main Content -->
+        <!-- JS File -->
+        <script src="Vet-reports.js"></script>
+</body>
+</html>

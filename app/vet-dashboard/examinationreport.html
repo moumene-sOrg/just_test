@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>examination report page</title>
+    <link rel="stylesheet" href="home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body class="examinationreport">
+
+    <!--header section-->
+    <div class="half-page-report">
+        <header class="reportpage-header">
+            <div class="header-top">
+                <span style="color:#64748B">Examine</span>
+                <i class="fa-solid fa-angle-right" style="color:#64748B"></i>
+                <span style="color:#137FEC">Report Form</span>
+            </div>
+            <h1 class="vet-name">Clinical Examination Report</h1>
+            <div class="header-bottom">
+                <span>Patient ID</span>
+                <span id="id"></span>
+            </div>
+        </header>
+
+        <!--animal information -->
+        <div id="animal-info"></div>
+
+        <!--shelter section-->
+
+        <section class="shelter-section">
+            <div class="shelter-text">
+                <p class="shelter-title">Requires Shelter Placement?</p>
+                <p class="shelter-subtitle">Immediate observation needed</p>
+            </div>
+
+            <div class="shelter-options">
+                <label class="radio-label">
+                    <input type="radio" id="shelterYes" name="shelterPlacement" value="yes" class="radio-input">
+                    <span class="custom-radio"></span>
+                    <span class="yes-no">Yes</span>
+                </label>
+
+                <label class="radio-label">
+                    <input type="radio" id="shelterNo" name="shelterPlacement" value="no" class="radio-input">
+                    <span class="custom-radio"></span>
+                    <span class="yes-no">No</span>
+                </label>
+            </div>
+        </section>
+
+        <!--vet comment section-->
+
+        <section class="comment-section">
+            <div class="comment">
+                <label class="comment-label">Diagnosis</label>
+                <textarea id="diagnosis" class="vet-comment" rows="5" cols="40"
+                    placeholder="Enter final diagnosis..."></textarea>
+            </div>
+            <div class="comment">
+                <label class="comment-label">Prescribed Treatment</label>
+                <textarea id="treatment" class="vet-comment" rows="5" cols="40"
+                    placeholder="Medication, dosage, and schedule..."></textarea>
+            </div>
+            <div class="comment">
+                <label class="comment-label">Clinical Notes</label>
+                <textarea id="notes" class="vet-comment" rows="8" cols="40"
+                    placeholder="EConfidential internal notes..."></textarea>
+            </div>
+        </section>
+
+        <!--print or save report section-->
+
+        <section class="print-section">
+            <button class="print-button" onclick="printReport()">
+                <i class="fa-solid fa-print"></i>
+                <span>Print</span>
+            </button>
+            <button class="savereport-button" id="save-report">
+                <i class="fa-solid fa-floppy-disk"></i>
+                <span>Save Report</span>
+            </button>
+        </section>
+    </div>
+
+    <!--navigation bar-->
+    <!-- Desk Version -->
+    <aside class="desk">
+        <div class="logo">
+            <div class="img"></div>
+            <h3>Vet<span>Hub</span></h3>
+        </div>
+        <ul class="list">
+            <li><a href="./home.html"><i class="fa-solid fa-house"></i>Home</a></li>
+            <li><a href="./casespage.html"><i class="fa-solid fa-briefcase-medical"></i>Vet Report</a></li>
+            <li><a href="./chat.html"><i class="fa-regular fa-message"></i>Chat</a></li>
+            <li><a href="./vetprofile.html"><i class="fa-regular fa-user"></i>Profile</a></li>
+            <li><a href="./setting.html"><i class="fa-solid fa-sliders"></i>Settings</a></li>
+        </ul>
+    </aside>
+
+    <!-- Mobile version -->
+    <aside class="mob">
+        <ul class="list">
+            <li><a href="./home.html"><i class="fa-solid fa-house"></i></a></li>
+            <li><a href="./casespage.html"><i class="fa-solid fa-briefcase-medical"></i></a></li>
+            <li><a href="./chat.html"><i class="fa-regular fa-message"></i></a></li>
+            <li><a href="./vetprofile.html"><i class="fa-regular fa-user"></i></a></li>
+            <li><a href="./setting.html"><i class="fa-solid fa-sliders"></i></a></li>
+        </ul>
+    </aside>
+
+    <script src="navbar.js" defer></script>
+    <script src="casepage.js" defer></script>
+
+</body>
+
+</html>

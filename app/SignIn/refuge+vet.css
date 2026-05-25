@@ -1,0 +1,434 @@
+
+/* Sart Global Rules */
+* {
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: "inter", sans-serif;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+:root {
+  --main-blue: #197fe6;
+  --text-grey: #64748b;
+  --border-color: #e2e8f0;
+}
+.container {
+  margin: 15px;
+}
+label,
+p {
+  color: var(--text-grey);
+}
+/* End Global Rules */
+
+/* Start Refuge Detials */
+.step-details {
+  font-size: 0.7em;
+  justify-content: space-between;
+  margin-bottom: 0.5em;
+  color: var(--text-grey);
+}
+.refuge-details form {
+  gap: 1em;
+}
+
+.step-details span:first-child {
+  color: var(--main-blue);
+  font-weight: 600;
+}
+
+.progres-line,
+.progres-line span {
+  display: block;
+  background-color: rgb(201, 201, 201);
+  border-radius: 3px;
+  height: 5px;
+}
+.progres-line span {
+  width: 100%;
+  background-color: var(--main-blue);
+}
+
+.step {
+  margin-bottom: 1.5em;
+}
+
+.refuge-details > p {
+  margin-top: 0.4em;
+  font-size: 0.75em;
+  margin-bottom: 1em;
+}
+
+.information .registration label,
+.information .refuge-name label {
+  font-size: 0.75em;
+  font-weight: 600;
+  margin-bottom: 0.3em;
+}
+
+.information .registration input,
+.information .refuge-name input {
+  padding: 0.75em;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  caret-color: var(--text-grey);
+}
+
+input::placeholder {
+  font-size: 0.9em;
+  font-weight: 500;
+  color: var(--text-grey);
+  opacity: 0.7;
+}
+
+.information .operating-hours label {
+  font-size: 0.75em;
+  font-weight: 600;
+  color: var(--text-grey);
+  margin-bottom: 0.75em;
+}
+
+.information .operating-hours .start-end-hours {
+  justify-content: space-between;
+  gap: 1em;
+  position: relative;
+}
+
+.information .operating-hours .start-end-hours > * {
+  flex: 1;
+  padding: 0.75em;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+}
+
+.information .operating-hours .start-end-hours > input::before {
+  position: absolute;
+  content: "OPEN";
+  bottom: -1.5em;
+  font-size: 0.75em;
+  font-weight: 600;
+  color: var(--text-grey);
+}
+
+.information
+  .operating-hours
+  .start-end-hours
+  > input:first-child:focus::before {
+  color: var(--main-blue);
+}
+.information
+  .operating-hours
+  .start-end-hours
+  > input:last-child:focus::before {
+  color: var(--main-blue);
+}
+.information .operating-hours .start-end-hours > input:last-child::before {
+  content: "CLOSE";
+}
+
+.information .operating-hours {
+  margin-bottom: 15px;
+}
+
+.information .capacity {
+  border: 1px solid var(--border-color);
+  padding: 1em;
+  border-radius: 10px;
+}
+
+.information .capacity .minmax-capacity > * {
+  width: 47%;
+}
+.information .capacity .minmax-capacity {
+  justify-content: space-between;
+}
+.information .capacity input {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  padding: 0.75em;
+  margin-top: 0.5em;
+}
+
+.information .capacity {
+  gap: 0.75em;
+}
+.information .capacity .minmax-capacity label {
+  font-size: 0.75em;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.capacity-title {
+  gap:.5em;
+}
+.verification-img > span {
+  font-size: 0.75em;
+  font-weight: 600;
+  color: var(--text-grey);
+}
+
+#drop-area #img-view {
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed var(--border-color);
+  border-radius: 10px;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0.5em;
+  background-position: center;
+  background-size: cover;
+  transition: all 0.3s ease;
+  position: relative;
+  height: 150px;
+}
+
+.submit-btn {
+  background-color: var(--main-blue);
+  align-items: center;
+  color: white;
+  justify-content: center;
+  width: 90%;
+  margin: auto;
+  padding: 0.75em;
+  border-radius: 10px;
+  margin-bottom: 0.75em;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  transform: scale(1.02);
+}
+
+.submit-btn input {
+  color: white;
+  border: 0;
+  background-color: transparent;
+  font-weight: 600;
+}
+
+.refuge-details p:last-of-type {
+  font-size: 0.5em;
+  text-align: center;
+  padding: 0 1em;
+}
+
+.refuge-details > a,
+#vet-sign > a {
+  color: var(--text-grey);
+  margin: auto;
+  font-size: 0.75em;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 20px;
+}
+
+.information input:focus,
+.information input:focus {
+  border-color: var(--main-blue);
+}
+
+  .subcont1{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: .5em;
+  }
+  .subcont2{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: .75em;
+  }
+/* End Refuge Detials */
+
+/* Start Vet Details */
+#vet-sign > h2 {
+  font-size: 1.25em;
+  margin-bottom: 0.3em;
+}
+#vet-sign > p {
+  font-size: 0.75em;
+  margin-bottom: 0.5em;
+}
+#vet-sign .line {
+  width: 100%;
+  height: 1.5px;
+  background-color: var(--border-color);
+}
+
+#vet-sign .vet-info {
+  gap: 0.75em;
+  margin: 0.75em 0;
+}
+.vet-info .info-title {
+  font-size: 0.75em;
+  font-weight: 600;
+  color: var(--text-grey);
+  gap: 5px;
+  margin-bottom: 0.7em;
+}
+.vet-info > div > label {
+  display: block;
+  font-size: 0.7em;
+  font-weight: 500;
+  margin-bottom: 0.5em;
+}
+.vet-info .vet-ID input {
+  width: 100%;
+  padding: 0.75em;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+}
+.vet-info .vet-ID input::placeholder {
+  font-size: 0.8em;
+}
+.vet-info select {
+  width: 100%;
+  padding: 0.75em;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+}
+
+.vet-info .select-area {
+  position: relative;
+  overflow: hidden;
+}
+
+.vet-info .select-area i {
+  pointer-events: none;
+  position: absolute;
+  background-color: white;
+  padding-right: 30px;
+  right: 1px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.vet-info .clinic textarea {
+  resize: none;
+  width: 100%;
+  min-height: 80px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  padding: 0.75em;
+  overflow: auto;
+}
+.vet-info .clinic textarea::placeholder {
+  font-size: 0.9em;
+  opacity: 0.7;
+  font-weight: 500;
+  color: var(--text-grey);
+}
+
+#vet-sign #img-view h4 {
+  color: black;
+  font-size: 1.1em;
+  margin-bottom: 0.25em;
+}
+#vet-sign #img-view p {
+  font-size: 0.9em;
+}
+#vet-sign .info {
+  border: 2px solid rgb(43 140 238 / 0.2);
+  border-radius: 10px;
+  padding: 1.25em;
+  background-color: rgb(43 140 238 / 0.1);
+  font-size: 0.75em;
+  line-height: 1.4;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 1em;
+}
+#vet-sign .info img {
+  transform: scale(0.85);
+}
+#vet-sign > a {
+  margin: 0px auto 15px;
+}
+
+#vet-sign input:focus,
+#vet-sign textarea:focus,
+#vet-sign select:focus {
+  border-color: var(--main-blue);
+  caret-color: var(--text-grey);
+}
+
+.dfc {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.dfr {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.rad {
+    border-radius: 6px;
+}
+/* End Vet Details */
+
+@media (min-width:768px) {
+  .container {
+    width: clamp(750px , 60vw , 80vw );
+    margin: 20px auto;
+    box-shadow: 0px 0 10px rgb(0 0 0 /.4);
+    border-radius: 20px;
+    padding: 1em;
+    transition: all .8s ease-in-out;
+  }
+  .container:hover{
+    transform: scale(1.01);
+  }
+
+  .subcont1{
+    flex-flow: row nowrap;
+  }
+  .subcont1 > * {
+    flex: 1;
+  }
+  .subcont2 {
+    flex-flow: row nowrap;
+    align-items: flex-end;
+  }
+  .subcont2 > * {
+    flex: 1;
+  }
+  .operating-hours{
+    justify-content: space-between;
+    height: 100px;
+    flex: 5%;
+  }
+  .information .operating-hours .start-end-hours > input:first-child::before ,
+  .information .operating-hours .start-end-hours > input:last-child::before {
+    top: 0;
+    transform: translateY(-30%);
+    left: 0;
+  }
+    .information .operating-hours .start-end-hours > input:last-child::before {
+      left: 52.2%;
+     }
+  .refuge-details p:last-of-type {
+    font-size: .7em;
+  }
+/* ##### vet file ######## */
+#drop-area #img-view {
+  height: 130px;
+}
+#vet-sign .info {
+  margin: 0;
+}
+#vet-sign > a {
+  margin: 0;
+}
+
+}

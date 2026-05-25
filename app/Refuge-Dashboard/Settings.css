@@ -1,0 +1,368 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+:root {
+    --blue-color: #197FE6;
+    --gray: #e5e7eb53;
+    --light-black: rgba(15, 23, 42, 0.735);
+}
+
+.pass>h2,
+.notification>h2,
+.main>h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f1729;
+    margin-bottom: 14px;
+}
+
+.pass>h2 i,
+.notification>h2 i,
+.main>h2 i {
+    color: var(--blue-color);
+    font-size: 18px;
+}
+
+.change-pass,
+.noti,
+.info-det {
+    background: #ffffff;
+    border: 1px solid #e2e6f0;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+/* ACCOUNT SECURITY CARD */
+.change-pass {
+    padding: 28px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.change-pass h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #0f1729;
+}
+
+.change-pass p {
+    font-size: 13px;
+    color: var(--light-black);
+    line-height: 1.6;
+    max-width: 520px;
+}
+
+.change-pass input[type="text"],
+.change-pass input[type="password"] {
+    display: none;
+    width: 100%;
+    max-width: 400px;
+    padding: 10px 14px;
+    border: 1.5px solid #dde2ed;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #0f1729;
+    background: #ffffff;
+    outline: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.change-pass input[type="text"]:focus,
+.change-pass input[type="password"]:focus {
+    border-color: var(--blue-color);
+    box-shadow: 0 0 0 3px rgba(25, 127, 230, 0.1);
+}
+
+.change-pass #update {
+    margin-top: 6px;
+    background: #ffffff;
+    border: 1.5px solid #cbd2e0;
+    border-radius: 8px;
+    padding: 9px 18px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #0f1729;
+    cursor: pointer;
+    width: fit-content;
+    transition: border-color 0.15s, background 0.15s, color 0.15s;
+}
+
+.change-pass #update:hover {
+    border-color: var(--blue-color);
+    background: #f0f6ff;
+    color: var(--blue-color);
+}
+
+/* NOTIFICATION SETTINGS CARD */
+.noti {
+    display: flex;
+    flex-direction: column;
+}
+
+.push,
+.email {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 28px;
+}
+
+.push {
+    border-bottom: 1px solid #edf0f7;
+}
+
+.push>i,
+.email>i {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    border-radius: 50%;
+    background: var(--gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blue-color);
+    font-size: 16px;
+}
+
+.push>p,
+.email>p {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 600;
+    color: #0f1729;
+    line-height: 1.2;
+}
+
+.push>p span,
+.email>p span {
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--light-black);
+    margin-top: 3px;
+}
+
+/* ===== TOGGLE BUTTONS ===== */
+#push-btn,
+#email-btn {
+    position: relative;
+    width: 48px;
+    height: 26px;
+    min-width: 48px;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    background: #c8cedb;
+    transition: background 0.2s;
+}
+
+#push-btn span,
+#email-btn span {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    transition: left 0.2s;
+}
+
+/* ON state */
+#push-btn.on,
+#email-btn.on {
+    background: var(--blue-color);
+}
+
+#push-btn.on span,
+#email-btn.on span {
+    left: 25px;
+}
+
+/* FACILITY DETAILS CARD */
+.info-det {
+    padding: 28px 32px;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-det h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #0f1729;
+    margin-bottom: 16px;
+}
+
+.info-det h3:nth-of-type(2) {
+    border-top: 1px solid #edf0f7;
+    padding-top: 20px;
+    margin-top: 8px;
+}
+
+/* Info grid */
+.info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 20px;
+    margin-bottom: 24px;
+}
+
+.info form:last-child {
+    grid-column: 1 / -1;
+}
+
+/* Details grid */
+.detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 20px;
+    margin-bottom: 24px;
+}
+
+.detail form:last-child {
+    grid-column: 1 / -1;
+}
+
+/* Form fields */
+.info form,
+.detail form {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.info form label,
+.detail form label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--light-black);
+}
+
+.info form input,
+.detail form input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1.5px solid #dde2ed;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #0f1729;
+    background: #ffffff;
+    outline: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.info form input:focus,
+.detail form input:focus {
+    border-color: var(--blue-color);
+    box-shadow: 0 0 0 3px rgba(25, 127, 230, 0.1);
+}
+
+/* Operating hours */
+.start-end-hours {
+    display: flex;
+    gap: 12px;
+}
+
+.start-end-hours input {
+    flex: 1;
+}
+
+/* Save / Cancel buttons */
+.btns {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+    border-top: 1px solid #edf0f7;
+    padding-top: 20px;
+    margin-top: 4px;
+}
+
+.btns #cancel {
+    background: transparent;
+    border: none;
+    color: var(--light-black);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+}
+
+.btns #cancel:hover {
+    background: var(--gray);
+    color: #0f1729;
+}
+
+.btns #save {
+    background: var(--blue-color);
+    color: #ffffff;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s, box-shadow 0.15s;
+}
+
+.btns #save:hover {
+    background: #1568c2;
+    box-shadow: 0 4px 12px rgba(25, 127, 230, 0.3);
+}
+
+/* LOG OUT BUTTON */
+.main>button#log-out {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    align-self: flex-start;
+    padding: 10px 20px;
+    background: transparent;
+    border: 1.5px solid #e0e4ed;
+    border-radius: 10px;
+    color: var(--light-black);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: border-color 0.15s, color 0.15s;
+    margin-bottom: 100px;
+}
+
+.main>button#log-out:hover {
+    border-color: #e05252;
+    color: #e05252;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 640px) {
+    .main {
+        padding: 20px 16px;
+    }
+
+    .info,
+    .detail {
+        grid-template-columns: 1fr;
+    }
+
+    .info form:last-child,
+    .detail form:last-child {
+        grid-column: 1;
+    }
+
+    .title h2 {
+        font-size: 24px;
+    }
+}

@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+:root {
+    --blue-color: #197FE6;
+    --gray: #e5e7eb53;
+    --light-black: rgba(15, 23, 42, 0.735);
+}
+/* Start Information Section */
+.main .information{
+    background-color: white;
+    border: 1px solid rgb(210, 210, 210);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 1px 5px rgba(240, 240, 240, 0.651);
+    transition: .3s;
+}
+.information .info{
+    display: flex;
+    gap: 25px;
+}
+.information .info .inf{
+    line-height: 1.6;
+}
+.info i#building{
+    align-content: center;
+    font-size: 35px;
+    background-color: #d8e1ea;
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    color: #768695e0;
+}
+.information .info .inf{
+    line-height: 1.6;
+}
+.information .info .inf span{
+    display: flex;
+    color: rgba(15, 23, 42, 0.528);
+    gap: 5px;
+    align-items: center;
+}
+.information .info .inf button{
+    padding: 5px 10px;
+    border: none;
+    border-radius: 20px;
+    margin: 10px 10px 0 0;
+}
+.information .info .inf button#green{
+    color: rgb(24, 122, 24);
+    background-color: rgb(215, 255, 215);
+    font-weight: 600;
+}
+.information .info .inf button#blue {
+    color: rgb(29, 118, 253);
+    background-color: rgba(219, 229, 255, 0.783);
+    font-weight: 600;
+}
+.information button#edit{
+    background-color: white;
+    padding: 10px;
+    border: 1px solid rgb(210, 210, 210);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+    transition: .3s;
+}
+.information a{
+    text-decoration: none;
+}
+.information button#edit:hover{
+    background-color: rgb(249, 249, 249);
+}
+/* End Information Section */
+/* Start Stats Section */
+.stats{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 25px;
+}
+.stats .card{
+    display: flex;
+    gap: 20px;
+}
+.stats .card div{
+    flex-basis: calc(100% / 3);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgb(210, 210, 210);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: .1s;
+    cursor: pointer;
+}
+.stats .card div.one:hover{
+    border: 1px solid rgb(24, 111, 224);
+}
+.stats .card div.two:hover {
+    border: 1px solid rgb(255, 166, 0);
+}
+.stats .card div.three:hover {
+    border: 1px solid rgb(237, 0, 158);
+}
+.stats .card div span{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 7px;
+    border-radius: 10px;
+    color: rgb(73, 193, 73);
+    background-color: rgb(236, 255, 236);
+    font-weight: 600;
+}
+.stats .card div i:nth-child(2){
+    width: 40px;
+    height: 40px;
+    align-content: center;
+    border-radius: 10px;
+}
+.stats .card div p{
+    color: rgba(15, 23, 42, 0.528);
+    font-weight: 500;
+}
+.stats .card div i.one{
+    background-color: rgb(196, 216, 255);
+    color: rgb(24, 111, 224);
+}
+.stats .card div i.two{
+    color: rgb(255, 166, 0);
+    background-color: rgb(247, 237, 218);
+}
+.stats .card div i.three{
+    color: rgb(237, 0, 158);
+    background-color: rgb(255, 224, 244);
+}
+/* End Stats Secion */
+/* Start Table Secrion */
+table td:last-child{
+    text-align: right;
+}
+table td button#remove{
+    background-color: rgb(255, 246, 246);
+    color: red;
+}
+
+/* Responsive */
+@media (max-width: 610px){
+    .main .information{
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+    .information button#edit{
+        color: white;
+        background-color: var(--blue-color);
+        border-radius: 50px;
+    }
+    .information button#edit:hover{
+        background-color: #58a8f7;
+    }
+    .stats .card{
+        flex-direction: column;
+    }
+}
+@media (max-width: 350px){
+    .information .info{
+        font-size: 10px;
+    }
+}

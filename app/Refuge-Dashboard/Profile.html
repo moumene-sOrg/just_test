@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="Profile.css">
+    <link rel="stylesheet" href="Requests.css">
+    <link rel="stylesheet" href="Home.css">
+    <title>Profile</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Start Side Bar -->
+        <!-- Desk Version -->
+        <aside class="desk">
+            <div class="logo">
+                <div class="img"></div>
+                <h3>Refuge<span>Hub</span></h3>
+            </div>
+            <ul class="list">
+                <li><a href="./Home.html"><i class="fa-regular fa-house"></i>Home</a></li>
+                <li><a href="./Requests.html"><i class="fa-regular fa-file-lines"></i>Requests</a></li>
+                <li><a href="./AdoptedAnimals.html"><i class="fa-solid fa-paw"></i>AdoptedAnimals</a></li>
+                <li><a href="./Vet-reports.html"><i class="fa-solid fa-briefcase-medical"></i>Vet Report</a></li>
+                <li><a href="./chat.html"><i class="fa-regular fa-message"></i>Chat</a></li>
+                <li class="active"><a href="./Profile.html"><i class="fa-regular fa-user"></i>Profile</a></li>
+                <li><a href="./Settings.html"><i class="fa-solid fa-sliders"></i>Settings</a></li>
+            </ul>
+        </aside>
+        <!-- Mobile version -->
+        <aside class="mob">
+            <ul class="list">
+                <li><a href="./Home.html"><i class="fa-regular fa-house"></i></a></li>
+                <li><a href="./Requests.html"><i class="fa-regular fa-file-lines"></i></a></li>
+                <li><a href="./AdoptedAnimals.html"><i class="fa-solid fa-paw"></i></a></li>
+                <li><a href="./Vet-reports.html"><i class="fa-solid fa-briefcase-medical"></i></a></li>
+                <li><a href="./chat.html"><i class="fa-regular fa-message"></i></a></li>
+                <li class="active"><a href="./Profile.js"><i class="fa-regular fa-user"></i></a></li>
+                <li><a href="./Settings.html"><i class="fa-solid fa-sliders"></i></a></li>
+            </ul>
+        </aside>
+        <!-- End Side Bar -->
+        <!-- Start Main Content -->
+        <div class="main">
+            <!-- Start Information -->
+            <div class="information">
+                <!-- Refuge Info -->
+                <div class="info">
+                    <img id="building" src="../SignIn/Images/defaults/refuge.png" style="width: 80px; height: 80px; border-radius: 12px; object-fit: cover; margin-right: 20px;">
+                    <div class="inf">
+                        <h2 id="refuge-name">City Central Refuge</h2>
+                        <span><i class="fa-solid fa-location-dot"></i><p id="refuge-address">123 Safety Way, Animal District</p></span>
+                        <button id="green">Verified Facility</button><button id="blue">Professional Tier</button>
+                    </div>
+                </div>
+                <!-- Edit Button -->
+                <a href="./Settings.html"><button id="edit"><i class="fa-solid fa-pen"></i>Edit Profile</button></a>
+            </div>
+            <!-- End Information -->
+            <!-- Start Stats Section -->
+            <div class="stats">
+                <h3>Performance Statistics</h3>
+                <div class="card">
+                    <div class="one">
+                        <i class="one fa-solid fa-chart-line"></i>
+                        <p>Total Animals Handled</p>
+                        <h2 id="total-hosted">0</h2>
+                    </div>
+                    <div class="two">
+                        <i class="two fa-regular fa-circle-dot"></i>
+                        <p>Pending Requests</p>
+                        <h2 id="pending-requests">0</h2>
+                    </div>
+                    <div class="three">
+                        <i class="three fa-solid fa-hand-holding-heart"></i>
+                        <p>Successful Adoptions</p>
+                        <h2 id="successful-adoptions">0</h2>
+                    </div>
+                </div>
+            </div>
+            <!-- End Stats Section -->
+            <!-- Start History Table -->
+            <div class="req-table">
+                <h2>Hosting History</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Animal Details</th>
+                            <th>Entry Date</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="hosting-history-body">
+                    </tbody>
+                </table>
+            </div>
+            <!-- End History Table -->
+            <!-- Start Next Table Part -->
+            <div class="next-pages" style="display: flex; justify-content: flex-end; gap: 30px; margin-top: 20px;">
+                <a href="#" id="prev-page"><i class="fa-solid fa-angle-left"></i></a>
+                <a href="#" id="next-page"><i class="fa-solid fa-angle-right"></i></a>
+            </div>
+            <!-- End Next Table -->
+        </div>
+        <!-- End Main Content -->
+        <!-- JS File -->
+        <script src="Profile.js"></script>
+
+</body>
+</html>
