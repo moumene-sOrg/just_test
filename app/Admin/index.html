@@ -43,72 +43,10 @@
 </head>
 <body class="bg-background text-gray-800 antialiased">
 
-    <!-- LOGIN PAGE -->
-    <div id="login-page" class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
-        <div class="w-full max-w-md">
-            <div class="flex items-center justify-between mb-8 md:mb-12">
-                <div class="flex items-center gap-2">
-                    <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white">
-                        <i data-lucide="paw-print" class="w-6 h-6"></i>
-                    </div>
-                    <span class="text-xl font-bold text-gray-900">RescuePaw Admin</span>
-                </div>
-                <button class="text-sm text-blue-600 font-medium bg-blue-50 px-4 py-2 rounded-full hover:bg-blue-100 transition">Support</button>
-            </div>
 
-            <div class="bg-white rounded-2xl shadow-xl p-8 md:p-10">
-                <div class="text-center mb-8">
-                    <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-white mx-auto mb-4 shadow-lg shadow-blue-200">
-                        <i data-lucide="paw-print" class="w-8 h-8"></i>
-                    </div>
-                    <h1 class="text-2xl font-bold text-gray-900 mb-2">Welcome Back</h1>
-                    <p class="text-gray-500 text-sm">Enter your credentials to manage the rescue</p>
-                </div>
-
-                <form id="login-form" class="space-y-6">
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Username</label>
-                        <div class="relative">
-                            <i data-lucide="user" class="absolute left-3 top-3 w-5 h-5 text-gray-400"></i>
-                            <input type="text" id="admin-user" placeholder="Enter your username" class="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition" required>
-                        </div>
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Password</label>
-                        <div class="relative">
-                            <i data-lucide="lock" class="absolute left-3 top-3 w-5 h-5 text-gray-400"></i>
-                            <input type="password" id="admin-pass" placeholder="Enter your password" class="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition" required>
-                        </div>
-                    </div>
-
-                    <div class="flex items-center justify-between text-sm">
-                        <label class="flex items-center gap-2 cursor-pointer">
-                            <input type="checkbox" class="rounded border-gray-300 text-blue-600 focus:ring-blue-600">
-                            <span class="text-gray-600">Remember me</span>
-                        </label>
-                        <a href="#" class="text-blue-600 font-medium hover:underline">Forgot password?</a>
-                    </div>
-
-                    <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-xl font-semibold shadow-lg shadow-blue-200 hover:bg-blue-700 active:scale-95 transition transform">
-                        Login to Admin Panel
-                    </button>
-                    <p id="admin-error" class="text-red-500 text-xs text-center mt-2"></p>
-                </form>
-
-                <div class="mt-6 text-center">
-                    <p class="text-xs text-gray-400 uppercase tracking-wider mb-4">Secure Admin Access Only</p>
-                    <div class="flex justify-center gap-6 text-xs text-gray-500">
-                        <span class="flex items-center gap-1"><i data-lucide="shield-check" class="w-4 h-4"></i> 256-bit Encryption</span>
-                        <span class="flex items-center gap-1"><i data-lucide="clock" class="w-4 h-4"></i> Session Logging</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- MAIN APP -->
-    <div id="app" class="hidden">
+    <div id="app">
         <!-- Desktop Sidebar -->
         <aside class="fixed left-0 top-0 h-full w-64 bg-white border-r border-gray-200 hidden md:flex flex-col z-40">
             <div class="p-6 border-b border-gray-100">
@@ -216,7 +154,7 @@
                                 <div class="p-2 bg-blue-50 rounded-lg text-blue-600">
                                     <i data-lucide="users" class="w-5 h-5 md:w-6 md:h-6"></i>
                                 </div>
-                                <span id="prop-users" class="text-xs font-medium text-green-600 bg-green-50 px-2 py-1 rounded-full">+12%</span>
+
                             </div>
                             <p class="text-gray-500 text-xs md:text-sm mb-1">Total Users</p>
                             <p id="stat-users" class="text-xl md:text-3xl font-bold text-gray-900">-</p>
@@ -226,7 +164,7 @@
                                 <div class="p-2 bg-indigo-50 rounded-lg text-indigo-600">
                                     <i data-lucide="stethoscope" class="w-5 h-5 md:w-6 md:h-6"></i>
                                 </div>
-                                <span id="prop-vets" class="text-xs font-medium text-green-600 bg-green-50 px-2 py-1 rounded-full">+3%</span>
+
                             </div>
                             <p class="text-gray-500 text-xs md:text-sm mb-1">Total Veterinarians</p>
                             <p id="stat-vets" class="text-xl md:text-3xl font-bold text-gray-900">-</p>
@@ -236,7 +174,7 @@
                                 <div class="p-2 bg-amber-50 rounded-lg text-amber-600">
                                     <i data-lucide="home" class="w-5 h-5 md:w-6 md:h-6"></i>
                                 </div>
-                                <span id="prop-refuges" class="text-xs font-medium text-green-600 bg-green-50 px-2 py-1 rounded-full">+5%</span>
+
                             </div>
                             <p class="text-gray-500 text-xs md:text-sm mb-1">Active Refuges</p>
                             <p id="stat-refuges" class="text-xl md:text-3xl font-bold text-gray-900">-</p>
@@ -246,7 +184,7 @@
                                 <div class="p-2 bg-rose-50 rounded-lg text-rose-600">
                                     <i data-lucide="alert-triangle" class="w-5 h-5 md:w-6 md:h-6"></i>
                                 </div>
-                                <span id="prop-reports" class="text-xs font-medium text-red-600 bg-red-50 px-2 py-1 rounded-full">-2%</span>
+
                             </div>
                             <p class="text-gray-500 text-xs md:text-sm mb-1">Total Reports</p>
                             <p id="stat-reports" class="text-xl md:text-3xl font-bold text-gray-900">-</p>
@@ -376,123 +314,18 @@
                                 </tr>
                             </thead>
                             <tbody id="accounts-list" class="divide-y divide-gray-100 text-sm">
-                                <tr class="hover:bg-gray-50 transition">
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center gap-3">
-                                            <img src="../SignIn/Images/defaults/user.png" class="w-10 h-10 rounded-full object-cover">
-                                            <span class="font-medium text-gray-900">David Smith</span>
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4 text-gray-600">david.smith@example.com</td>
-                                    <td class="px-6 py-4 text-gray-900">Adopter</td>
-                                    <td class="px-6 py-4"><span class="px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-700">Active</span></td>
-                                    <td class="px-6 py-4 text-right">
-                                        <div class="flex items-center justify-end gap-2">
-                                            <button class="p-2 hover:bg-gray-100 rounded-lg text-gray-500"><i data-lucide="eye" class="w-4 h-4"></i></button>
-                                            <button class="p-2 hover:bg-gray-100 rounded-lg text-gray-500"><i data-lucide="ban" class="w-4 h-4"></i></button>
-                                            <button class="p-2 hover:bg-red-50 rounded-lg text-red-500"><i data-lucide="trash-2" class="w-4 h-4"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50 transition">
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center gap-3">
-                                            <img src="../SignIn/Images/defaults/user.png" class="w-10 h-10 rounded-full object-cover">
-                                            <span class="font-medium text-gray-900">Sarah Jenkins</span>
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4 text-gray-600">s.jenkins@rescue.org</td>
-                                    <td class="px-6 py-4 text-gray-900">Volunteer</td>
-                                    <td class="px-6 py-4"><span class="px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-700">Active</span></td>
-                                    <td class="px-6 py-4 text-right">
-                                        <div class="flex items-center justify-end gap-2">
-                                            <button class="p-2 hover:bg-gray-100 rounded-lg text-gray-500"><i data-lucide="eye" class="w-4 h-4"></i></button>
-                                            <button class="p-2 hover:bg-gray-100 rounded-lg text-gray-500"><i data-lucide="ban" class="w-4 h-4"></i></button>
-                                            <button class="p-2 hover:bg-red-50 rounded-lg text-red-500"><i data-lucide="trash-2" class="w-4 h-4"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50 transition">
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center gap-3">
-                                            <div class="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center text-amber-700 font-bold">M</div>
-                                            <span class="font-medium text-gray-900">Mark Thompson</span>
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4 text-gray-600">m.thompson@clinic.com</td>
-                                    <td class="px-6 py-4 text-gray-900">Foster</td>
-                                    <td class="px-6 py-4"><span class="px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-600">Disabled</span></td>
-                                    <td class="px-6 py-4 text-right">
-                                        <div class="flex items-center justify-end gap-2">
-                                            <button class="p-2 hover:bg-gray-100 rounded-lg text-gray-500"><i data-lucide="eye" class="w-4 h-4"></i></button>
-                                            <button class="p-2 hover:bg-green-50 rounded-lg text-green-600"><i data-lucide="check-circle" class="w-4 h-4"></i></button>
-                                            <button class="p-2 hover:bg-red-50 rounded-lg text-red-500"><i data-lucide="trash-2" class="w-4 h-4"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50 transition">
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center gap-3">
-                                            <img src="../SignIn/Images/defaults/user.png" class="w-10 h-10 rounded-full object-cover">
-                                            <span class="font-medium text-gray-900">Elena Rodriguez</span>
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4 text-gray-600">elena.r@vetlink.net</td>
-                                    <td class="px-6 py-4 text-gray-900">Adopter</td>
-                                    <td class="px-6 py-4"><span class="px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-700">Pending</span></td>
-                                    <td class="px-6 py-4 text-right">
-                                        <div class="flex items-center justify-end gap-2">
-                                            <button class="p-2 hover:bg-gray-100 rounded-lg text-gray-500"><i data-lucide="eye" class="w-4 h-4"></i></button>
-                                            <button class="p-2 hover:bg-gray-100 rounded-lg text-gray-500"><i data-lucide="ban" class="w-4 h-4"></i></button>
-                                            <button class="p-2 hover:bg-red-50 rounded-lg text-red-500"><i data-lucide="trash-2" class="w-4 h-4"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
+                                <!-- Data dynamically loaded -->
                             </tbody>
                         </table>
                         <div class="px-6 py-4 border-t border-gray-100 flex items-center justify-between">
-                            <p id="accounts-page-info" class="text-sm text-gray-500">Showing 0 to 0 of 0 entries</p>
+                            <p id="accounts-page-info" class="text-sm text-gray-500"></p>
                             <div class="flex items-center gap-2" id="accounts-pagination">
                             </div>
                         </div>
                     </div>
 
-                    <div class="md:hidden space-y-3">
-                        <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100">
-                            <div class="flex items-start justify-between mb-3">
-                                <div class="flex items-center gap-3">
-                                    <img src="../SignIn/Images/defaults/user.png" class="w-12 h-12 rounded-full object-cover">
-                                    <div>
-                                        <p class="font-bold text-gray-900">David Smith</p>
-                                        <p class="text-xs text-gray-500 mt-0.5">david.smith@example.com</p>
-                                        <span class="inline-block mt-2 px-2 py-0.5 rounded text-xs font-medium bg-green-100 text-green-700">ACTIVE</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex items-center justify-end gap-2 pt-3 border-t border-gray-100">
-                                <button class="p-2 text-gray-400 hover:text-gray-600"><i data-lucide="eye" class="w-5 h-5"></i></button>
-                                <button class="p-2 text-gray-400 hover:text-gray-600"><i data-lucide="slash" class="w-5 h-5"></i></button>
-                                <button class="p-2 text-red-400 hover:text-red-600"><i data-lucide="trash-2" class="w-5 h-5"></i></button>
-                            </div>
-                        </div>
-
-                        <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 opacity-75">
-                            <div class="flex items-start justify-between mb-3">
-                                <div class="flex items-center gap-3">
-                                    <div class="w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center text-amber-700 font-bold text-lg">M</div>
-                                    <div>
-                                        <p class="font-bold text-gray-900">Mark Thompson</p>
-                                        <p class="text-xs text-gray-500 mt-0.5">m.thompson@clinic.com</p>
-                                        <span class="inline-block mt-2 px-2 py-0.5 rounded text-xs font-medium bg-gray-200 text-gray-600">DISABLED</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex items-center justify-end gap-2 pt-3 border-t border-gray-100">
-                                <button class="p-2 text-gray-400 hover:text-gray-600"><i data-lucide="eye" class="w-5 h-5"></i></button>
-                                <button class="p-2 text-green-500 hover:text-green-700"><i data-lucide="check-circle" class="w-5 h-5"></i></button>
-                                <button class="p-2 text-red-400 hover:text-red-600"><i data-lucide="trash-2" class="w-5 h-5"></i></button>
-                            </div>
-                        </div>
+                    <div class="md:hidden space-y-3" id="accounts-mobile-list">
+                        <!-- Mobile cards load here -->
                     </div>
                 </div>
 
@@ -512,7 +345,7 @@
                     <div class="flex gap-2 mb-6 overflow-x-auto pb-2" id="reports-filters">
                         <button id="filter-reports-all" onclick="setReportsFilter('all')" class="px-5 py-2 rounded-full bg-blue-600 text-white font-medium text-sm whitespace-nowrap shadow-md shadow-blue-200">All Reports</button>
                         <button id="filter-reports-pending" onclick="setReportsFilter('pending')" class="px-5 py-2 rounded-full bg-white text-gray-600 font-medium text-sm whitespace-nowrap border border-gray-200 hover:bg-gray-50">Pending</button>
-                        <button id="filter-reports-urgent" onclick="setReportsFilter('urgent')" class="px-5 py-2 rounded-full bg-white text-gray-600 font-medium text-sm whitespace-nowrap border border-gray-200 hover:bg-gray-50">Urgent</button>
+                        <button id="filter-reports-adopted" onclick="setReportsFilter('adopted')" class="px-5 py-2 rounded-full bg-white text-gray-600 font-medium text-sm whitespace-nowrap border border-gray-200 hover:bg-gray-50">Adopted</button>
                     </div>
 
                     <div class="hidden md:block bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
@@ -528,85 +361,11 @@
                                 </tr>
                             </thead>
                             <tbody id="reports-list" class="divide-y divide-gray-100 text-sm">
-                                <tr class="hover:bg-gray-50 transition">
-                                    <td class="px-6 py-4"><input type="checkbox" class="rounded border-gray-300 text-blue-600 focus:ring-blue-600"></td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center gap-3">
-                                            <img src="../SignIn/Images/defaults/user.png" class="w-8 h-8 rounded-full object-cover">
-                                            <span class="font-medium text-gray-900">John Doe</span>
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4 text-gray-600">Canine</td>
-                                    <td class="px-6 py-4 text-gray-600">Oct 24, 2023</td>
-                                    <td class="px-6 py-4"><span class="px-3 py-1 rounded-full text-xs font-medium bg-amber-100 text-amber-700">Pending</span></td>
-                                    <td class="px-6 py-4 text-right">
-                                        <button class="text-blue-600 font-medium hover:underline text-sm">View Details</button>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50 transition">
-                                    <td class="px-6 py-4"><input type="checkbox" class="rounded border-gray-300 text-blue-600 focus:ring-blue-600"></td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center gap-3">
-                                            <img src="../SignIn/Images/defaults/user.png" class="w-8 h-8 rounded-full object-cover">
-                                            <span class="font-medium text-gray-900">Jane Smith</span>
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4 text-gray-600">Feline</td>
-                                    <td class="px-6 py-4 text-gray-600">Oct 23, 2023</td>
-                                    <td class="px-6 py-4"><span class="px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-700">Resolved</span></td>
-                                    <td class="px-6 py-4 text-right">
-                                        <button class="text-blue-600 font-medium hover:underline text-sm">View Details</button>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50 transition">
-                                    <td class="px-6 py-4"><input type="checkbox" class="rounded border-gray-300 text-blue-600 focus:ring-blue-600"></td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center gap-3">
-                                            <img src="../SignIn/Images/defaults/user.png" class="w-8 h-8 rounded-full object-cover">
-                                            <span class="font-medium text-gray-900">Mike Ross</span>
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4 text-gray-600">Bird</td>
-                                    <td class="px-6 py-4 text-gray-600">Oct 22, 2023</td>
-                                    <td class="px-6 py-4"><span class="px-3 py-1 rounded-full text-xs font-medium bg-amber-100 text-amber-700">Pending</span></td>
-                                    <td class="px-6 py-4 text-right">
-                                        <button class="text-blue-600 font-medium hover:underline text-sm">View Details</button>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50 transition">
-                                    <td class="px-6 py-4"><input type="checkbox" class="rounded border-gray-300 text-blue-600 focus:ring-blue-600"></td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center gap-3">
-                                            <img src="../SignIn/Images/defaults/user.png" class="w-8 h-8 rounded-full object-cover">
-                                            <span class="font-medium text-gray-900">Sarah Chen</span>
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4 text-gray-600">Reptile</td>
-                                    <td class="px-6 py-4 text-gray-600">Oct 21, 2023</td>
-                                    <td class="px-6 py-4"><span class="px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-700">Resolved</span></td>
-                                    <td class="px-6 py-4 text-right">
-                                        <button class="text-blue-600 font-medium hover:underline text-sm">View Details</button>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50 transition">
-                                    <td class="px-6 py-4"><input type="checkbox" class="rounded border-gray-300 text-blue-600 focus:ring-blue-600"></td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center gap-3">
-                                            <img src="../SignIn/Images/defaults/user.png" class="w-8 h-8 rounded-full object-cover">
-                                            <span class="font-medium text-gray-900">Alex Turner</span>
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4 text-gray-600">Feline</td>
-                                    <td class="px-6 py-4 text-gray-600">Oct 20, 2023</td>
-                                    <td class="px-6 py-4"><span class="px-3 py-1 rounded-full text-xs font-medium bg-amber-100 text-amber-700">Pending</span></td>
-                                    <td class="px-6 py-4 text-right">
-                                        <button class="text-blue-600 font-medium hover:underline text-sm">View Details</button>
-                                    </td>
-                                </tr>
+                                <!-- Data dynamically loaded -->
                             </tbody>
                         </table>
                         <div class="px-6 py-4 border-t border-gray-100 flex items-center justify-between">
-                            <p id="reports-page-info" class="text-sm text-gray-500">Showing 0 to 0 of 0 reports</p>
+                            <p id="reports-page-info" class="text-sm text-gray-500"></p>
                             <div class="flex items-center gap-3">
                                 <button onclick="deleteSelectedReports()" class="px-4 py-2 bg-red-500 text-white rounded-lg text-sm font-medium flex items-center gap-2 hover:bg-red-600 transition">
                                     <i data-lucide="trash-2" class="w-4 h-4"></i> Delete Selected
@@ -617,60 +376,8 @@
                         </div>
                     </div>
 
-                    <div class="md:hidden space-y-3">
-                        <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 border-l-4 border-l-amber-400">
-                            <div class="flex items-start justify-between mb-3">
-                                <div class="flex items-center gap-3">
-                                    <img src="../SignIn/Images/defaults/user.png" class="w-10 h-10 rounded-full object-cover">
-                                    <div>
-                                        <p class="font-bold text-gray-900 text-sm">David Smith</p>
-                                        <p class="text-xs text-gray-500 uppercase tracking-wider mt-0.5">Reporter</p>
-                                    </div>
-                                </div>
-                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-amber-100 text-amber-700">PENDING REVIEW</span>
-                            </div>
-                            <div class="space-y-2 mb-4">
-                                <div class="flex items-center gap-2 text-sm text-gray-700">
-                                    <i data-lucide="paw-print" class="w-4 h-4 text-gray-400"></i>
-                                    <span>Stray Dog (Husky mix)</span>
-                                </div>
-                                <div class="flex items-center gap-2 text-sm text-gray-500">
-                                    <i data-lucide="calendar" class="w-4 h-4 text-gray-400"></i>
-                                    <span>Oct 24, 2023 • 14:30</span>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <button class="flex-1 bg-blue-50 text-blue-600 py-2.5 rounded-xl text-sm font-medium hover:bg-blue-100 transition">View Details</button>
-                                <button class="p-2.5 border border-red-200 text-red-500 rounded-xl hover:bg-red-50 transition"><i data-lucide="trash-2" class="w-5 h-5"></i></button>
-                            </div>
-                        </div>
-
-                        <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 border-l-4 border-l-red-400">
-                            <div class="flex items-start justify-between mb-3">
-                                <div class="flex items-center gap-3">
-                                    <div class="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center text-amber-700 font-bold">M</div>
-                                    <div>
-                                        <p class="font-bold text-gray-900 text-sm">Mark Thompson</p>
-                                        <p class="text-xs text-gray-500 uppercase tracking-wider mt-0.5">Rescue Partner</p>
-                                    </div>
-                                </div>
-                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-red-100 text-red-700">URGENT ACTION</span>
-                            </div>
-                            <div class="space-y-2 mb-4">
-                                <div class="flex items-center gap-2 text-sm text-gray-700">
-                                    <i data-lucide="alert-triangle" class="w-4 h-4 text-red-500"></i>
-                                    <span>Abuse Allegation (Equine)</span>
-                                </div>
-                                <div class="flex items-center gap-2 text-sm text-gray-500">
-                                    <i data-lucide="calendar" class="w-4 h-4 text-gray-400"></i>
-                                    <span>Oct 23, 2023 • 18:45</span>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <button class="flex-1 bg-red-50 text-red-600 py-2.5 rounded-xl text-sm font-medium hover:bg-red-100 transition">Urgent Review</button>
-                                <button class="p-2.5 border border-red-200 text-red-500 rounded-xl hover:bg-red-50 transition"><i data-lucide="trash-2" class="w-5 h-5"></i></button>
-                            </div>
-                        </div>
+                    <div class="md:hidden space-y-3" id="reports-mobile-list">
+                        <!-- Mobile cards load here -->
                     </div>
                 </div>
 
@@ -806,23 +513,17 @@
         </nav>
     </div>
 
+    <script src="admin_app.js"></script>
     <script>
-        // Initialize icons
-        if(localStorage.getItem("lastPage")){
-            showPage(localStorage.getItem("lastPage")) ;
+        // Security check
+        if (!localStorage.getItem('admin_token')) {
+            window.location.href = 'login.html';
         }
-
-        lucide.createIcons();
 
         // Navigation function
         function showPage(pageName) {
             localStorage.setItem("lastPage",pageName) ;
-            // Hide login, show app if needed
-            if (pageName !== 'login') {
-                document.getElementById('login-page').classList.add('hidden');
-                document.getElementById('app').classList.remove('hidden');
-            }
-
+            
             // Hide all pages
             document.querySelectorAll('.page').forEach(page => {
                 page.classList.remove('active');
@@ -832,6 +533,18 @@
             const selectedPage = document.getElementById(pageName);
             if (selectedPage) {
                 selectedPage.classList.add('active');
+                if (pageName === 'dashboard' && window.loadDashboard) {
+                    window.loadDashboard();
+                }
+                if (pageName === 'accounts' && window.loadAccounts) {
+                    window.loadAccounts();
+                }
+                if (pageName === 'reports' && window.loadReports) {
+                    window.loadReports();
+                }
+                if (pageName === 'profile' && window.loadProfile) {
+                    window.loadProfile();
+                }
             }
 
             // Update desktop nav
@@ -855,10 +568,17 @@
             });
 
             window.scrollTo(0, 0);
-            lucide.createIcons();
+            if (window.lucide) lucide.createIcons();
         }
+
+        // Initialize after everything is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            if(localStorage.getItem("lastPage")){
+                showPage(localStorage.getItem("lastPage")) ;
+            } else {
+                showPage('dashboard');
+            }
+        });
     </script>
-    <script src="main.js"></script>
-    <script src="admin_app.js"></script>
 </body>
 </html>

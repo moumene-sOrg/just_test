@@ -31,8 +31,8 @@ app.use('/photo', express.static(path.join(__dirname, 'photo')));
 app.use('/diplomat', express.static(path.join(__dirname, 'diplomat')));
 app.use('/refugePhoto', express.static(path.join(__dirname, 'refugePhoto')));
 
-// Root → Admin dashboard
-app.get('/', (req, res) => res.redirect('/Admin/index.html'));
+// Root → Sign-In
+app.get('/', (req, res) => res.redirect('/SignIn/SignInPage.html'));
 app.get('/login', (req, res) => res.redirect('/SignIn/SignInPage.html'));
 
 // ═════════════════════════════════════════════════════════════
@@ -68,7 +68,7 @@ const authenticateAdmin = (req, res, next) => {
 };
 
 // ═════════════════════════════════════════════════════════════
-// ADMIN BACKEND v2.5 (UNIFIED)
+// ADMIN BACKEND v3.0 (REBUILT)
 // ═════════════════════════════════════════════════════════════
 const adminRouter = express.Router();
 
@@ -84,6 +84,11 @@ adminRouter.post('/auth/login', async (req, res) => {
         
         if (!isMatch) return res.status(401).json({ error: 'Password incorrect' });
 
+        await prisma.users.update({
+            where: { id: user.id },
+            data: { last_login_at: new Date() }
+        });
+
         const token = jwt.sign({ id: user.id, role: 'admin' }, JWT_SECRET, { expiresIn: '24h' });
         res.json({ token, user: { name: user.first_name, role: user.role } });
     } catch (e) { 
@@ -92,16 +97,7 @@ adminRouter.post('/auth/login', async (req, res) => {
 });
 
 // 2. SECURITY GATE
-adminRouter.use((req, res, next) => {
-    const auth = req.headers.authorization;
-    if (!auth) return res.status(401).json({ error: 'Identity required' });
-    const token = auth.split(' ')[1];
-    jwt.verify(token, JWT_SECRET, (err, decoded) => {
-        if (err || decoded.role !== 'admin') return res.status(403).json({ error: 'Access forbidden' });
-        req.admin = decoded;
-        next();
-    });
-});
+adminRouter.use(authenticateAdmin);
 
 // 3. DASHBOARD STATS & ACTIVITY
 adminRouter.get('/stats', async (req, res) => {
@@ -113,9 +109,9 @@ adminRouter.get('/stats', async (req, res) => {
             prisma.demands.count()
         ]);
         res.json({
-            users: { total: normal, trend: '+12%' },
-            vets: { total: vets, trend: '+3%' },
-            refuges: { total: refuges, trend: '+5%' },
+            users: { total: normal, trend: 'Live' },
+            vets: { total: vets, trend: 'Live' },
+            refuges: { total: refuges, trend: 'Live' },
             reports: { total: activeDemands, trend: 'Live' }
         });
     } catch (e) { res.status(500).json({ error: 'Stats failed' }); }
@@ -123,16 +119,46 @@ adminRouter.get('/stats', async (req, res) => {
 
 adminRouter.get('/activity', async (req, res) => {
     try {
-        const demands = await prisma.demands.findMany({
-            take: 5, orderBy: { created_at: 'desc' },
-            include: { users: { select: { first_name: true, last_name: true } } }
-        });
-        res.json(demands.map(d => ({
-            name: `${d.users?.first_name || 'System'} ${d.users?.last_name || ''}`,
-            action: `Reported a ${d.animal_type}`,
-            date: d.created_at,
-            status: 'Active'
-        })));
+        const [demands, signups, logins] = await Promise.all([
+            prisma.demands.findMany({
+                take: 5, orderBy: { created_at: 'desc' },
+                include: { users: { select: { first_name: true, last_name: true } } }
+            }),
+            prisma.users.findMany({
+                take: 5, orderBy: { created_at: 'desc' },
+                where: { role: { not: 'admin' } }
+            }),
+            prisma.users.findMany({
+                take: 5, orderBy: { last_login_at: 'desc' },
+                where: { last_login_at: { not: null }, role: { not: 'admin' } }
+            })
+        ]);
+
+        const activity = [
+            ...demands.map(d => ({
+                name: `${d.users?.first_name || 'System'} ${d.users?.last_name || ''}`,
+                action: `Animal Report: ${d.animal_type}`,
+                date: d.created_at,
+                status: 'New Report',
+                type: 'report'
+            })),
+            ...signups.map(u => ({
+                name: `${u.first_name} ${u.last_name}`,
+                action: `New Account: ${u.role}`,
+                date: u.created_at,
+                status: 'Joined',
+                type: 'signup'
+            })),
+            ...logins.map(l => ({
+                name: `${l.first_name} ${l.last_name}`,
+                action: `Account Access: ${l.role}`,
+                date: l.last_login_at,
+                status: 'Logged In',
+                type: 'login'
+            }))
+        ].sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 8);
+
+        res.json(activity);
     } catch (e) { res.status(500).json({ error: 'Activity failed' }); }
 });
 
@@ -185,10 +211,17 @@ adminRouter.get('/reports', async (req, res) => {
     } catch (e) { res.status(500).json({ error: 'Reports failed' }); }
 });
 
+adminRouter.delete('/reports/:id', async (req, res) => {
+    try {
+        await prisma.demands.delete({ where: { id: parseInt(req.params.id) } });
+        res.json({ success: true });
+    } catch (e) { res.status(500).json({ error: 'Deletion failed' }); }
+});
+
 // 6. PROFILE & SECURITY
 adminRouter.get('/profile', async (req, res) => {
     try {
-        const u = await prisma.users.findUnique({ where: { id: req.admin.id } });
+        const u = await prisma.users.findUnique({ where: { id: req.user.id } });
         res.json(u);
     } catch (e) { res.status(500).json({ error: 'Profile failed' }); }
 });
@@ -197,7 +230,7 @@ adminRouter.put('/profile', async (req, res) => {
     try {
         const { first_name, last_name, email } = req.body;
         const u = await prisma.users.update({
-            where: { id: req.admin.id },
+            where: { id: req.user.id },
             data: { first_name, last_name, email }
         });
         res.json(u);
@@ -207,7 +240,7 @@ adminRouter.put('/profile', async (req, res) => {
 adminRouter.put('/profile/password', async (req, res) => {
     try {
         const { current, newPass } = req.body;
-        const user = await prisma.users.findUnique({ where: { id: req.admin.id } });
+        const user = await prisma.users.findUnique({ where: { id: req.user.id } });
         
         const isMatch = (current === user.pass_word) || 
                        (await bcrypt.compare(current, user.pass_word).catch(() => false));
@@ -215,13 +248,12 @@ adminRouter.put('/profile/password', async (req, res) => {
         if (!isMatch) return res.status(401).json({ error: 'Current password incorrect' });
 
         const hashed = await bcrypt.hash(newPass, 10);
-        await prisma.users.update({ where: { id: req.admin.id }, data: { pass_word: hashed } });
+        await prisma.users.update({ where: { id: req.user.id }, data: { pass_word: hashed } });
         res.json({ success: true });
     } catch (e) { res.status(500).json({ error: 'Password update failed' }); }
 });
 
 app.use('/api/admin', adminRouter);
-
 
 // ═════════════════════════════════════════════════════════════
 // VET ROUTER  —  /api/vet
@@ -788,7 +820,7 @@ app.use('/api/refuge', refugeRouter);
 // ─────────────────────────────────────────────────────────────
 app.listen(PORT, () => {
     console.log(`✅ Unified server running on http://localhost:${PORT}`);
-    console.log(`   Admin  →  http://localhost:${PORT}/admin/`);
+    console.log(`   Admin  →  http://localhost:${PORT}/admin/login.html`);
     console.log(`   Vet    →  http://localhost:${PORT}/vet/home.html`);
     console.log(`   Refuge →  http://localhost:${PORT}/refuge/Home.html`);
     console.log(`   User   →  http://localhost:${PORT}/User-Dashbord/index.html`);

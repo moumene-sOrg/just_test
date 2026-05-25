@@ -1,0 +1,712 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+:root{
+    --blue-color: #197FE6;
+    --gray: #e5e7eb53;
+    --light-black: rgba(15, 23, 42, 0.735);
+}
+/* Start Side Bar */
+.container{
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+/* Desk version */
+aside.desk{
+    width: 25%;
+    height: 100vh;
+    position: fixed;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+}
+aside.desk .logo{
+    display: flex;
+    align-items: center;
+}
+aside.desk .logo .img{
+    width: 60px;
+    height: 60px;
+    background-image: url(./images/logo.png);
+    background-size: cover;
+    margin-right: 5px;
+}
+aside.desk .logo h3 span{
+    color: var(--blue-color);
+}
+aside.desk ul{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+aside.desk ul li{
+    list-style: none;
+    border-radius: 50px;
+    transition: .3s;
+}
+aside.desk a {
+    text-decoration: none;
+    color: var(--light-black);
+    font-weight: 500;
+}
+aside.desk ul li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 12px 16px;
+}
+aside.desk ul li.active{
+    background-color: var(--blue-color);
+}
+aside.desk ul li.active a{
+    color: white;
+    width: 100%;
+}
+aside.desk ul li:hover{
+    background-color: #eff7ff;
+}
+aside.desk ul li.active:hover {
+    background-color: var(--blue-color);
+}
+
+aside.desk ul li.active:hover a {
+    color: white;
+}
+aside.desk ul li:hover a{
+    color: var(--blue-color);
+}
+aside.desk a i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+/* Mobile version */
+aside.mob {
+    background-color: white;
+    width: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.167);
+    margin-bottom: 8px;
+    margin-left: 5%;
+    position: fixed;
+    z-index: 1000;
+    padding: 10px;
+    bottom: 0;
+    left: 0;
+    display: none;
+}
+
+aside.mob ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+}
+
+aside.mob ul li {
+    list-style: none;
+    border-radius: 50px;
+    transition: .3s;
+    text-align: center;
+}
+
+aside.mob a {
+    text-decoration: none;
+    color: var(--light-black);
+    font-weight: 500;
+}
+aside.mob ul li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 12px 16px;
+}
+
+aside.mob ul li.active {
+    background-color: var(--blue-color);
+}
+
+aside.mob ul li.active a {
+    color: white;
+}
+
+aside.mob ul li:hover {
+    background-color: #eff7ff;
+}
+
+aside.mob ul li:hover a {
+    color: var(--blue-color);
+}
+aside.mob ul li.active:hover {
+    background-color: var(--blue-color);
+}
+
+aside.mob ul li.active:hover a {
+    color: white;
+}
+
+aside.mob a i {
+    font-size: 18px;
+}
+/* End Side Bar */
+
+/* Start Main */
+.main{
+    width: 75%;
+    background-color: var(--gray);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-left: 25%;
+}
+/* Start title */
+.main .title{
+    line-height: 1.6;
+}
+.main .title h2{
+    font-weight: 900;
+    font-size: 35px;
+}
+.main .title p{
+    color: var(--light-black);
+}
+/* End title */
+/* Start Cards */
+.main .cards{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+}
+.main .cards a{
+    text-decoration: none;
+}
+.main .cards div{
+    flex-basis: 49%;
+    padding: 30px;
+    background-color: white;
+    border: 1px solid rgb(235, 235, 235);
+    border-radius: 20px;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: .3s;
+    position: relative;
+}
+.main .cards div:hover{
+    border: 1px solid var(--blue-color);
+}
+.main .cards div i.fst{
+    color: var(--blue-color);
+    font-size: 20px;
+    background-color: #eff7ff;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    padding-top: 10px;
+    margin-bottom: 20px;
+}
+.main .cards div span.req{
+    background-color: rgb(218, 250, 218);
+    color: rgb(3, 165, 3);
+    font-weight: bold;
+    border-radius: 15px;
+    padding: 3px 10px;
+    position: absolute;
+    right: 30px;
+}
+.main .cards div span.rep {
+    background-color: rgb(255, 242, 217);
+    color: orangered;
+    font-weight: bold;
+    border-radius: 15px;
+    padding: 3px 10px;
+    position: absolute;
+    right: 30px;
+}
+.main .cards div h2{
+    color: black;
+}
+.main .cards div p{
+    color: var(--light-black);
+}
+.main .cards div a:last-child{
+    color: var(--blue-color);
+    font-weight: bold;
+}
+.main .cards div a i.lst{
+    margin-left: 15px;
+    transition: .3s;
+}
+.main .cards div:hover a i.lst{
+    margin-left: 20px;
+}
+/* End Cards */
+/* Start Table List */
+.adopted-animals {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid #e6e6e6;
+}
+
+.adopted-animals .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.adopted-animals h2 {
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.see-more {
+    background: var(--blue-color);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.see-more:hover {
+    background-color: #3093f7;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+}
+
+thead th {
+    text-align: left;
+    padding: 12px 5px;
+    color: #7d8899;
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+tbody tr {
+    background: #fff;
+    border-radius: 12px;
+}
+
+tbody tr td:first-child {
+    border-radius: 12px 0 0 12px;
+}
+
+tbody tr td:last-child {
+    border-radius: 0 12px 12px 0;
+}
+
+tbody td {
+    padding: 18px 5px;
+    font-size: 16px;
+    color: #424b57;
+    border-top: 1px solid #ececec;
+    border-bottom: 1px solid #ececec;
+}
+
+tbody tr:hover td {
+    background: #f7faff;
+}
+
+tbody a {
+    color: var(--blue-color);
+    font-weight: 600;
+    text-decoration: none;
+    transition: .2s;
+}
+
+tbody a:hover {
+    opacity: 0.8;
+}
+
+tbody .view-det-btn {
+    background: transparent;
+    border: none;
+    color: var(--blue-color);
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+tbody .view-det-btn:hover {
+    text-decoration: underline;
+}
+/* End Table List */
+
+.next-pages i{
+    color: var(--blue-color);
+    font-size: 20px;
+    cursor: pointer;
+}
+/* End Main */
+
+/* Start Popup */
+.overlay {
+    background-color: rgba(0, 0, 0, 0.507);
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    display: none;
+}
+
+.popup {
+    background-color: white;
+    position: fixed;
+    width: 50%;
+    height: auto;
+    min-height: 320px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+    border-radius: 20px;
+    display: none;
+    padding: 20px;
+}
+.popup h3{
+    margin-bottom: 20px;
+}
+.popup .content{
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 90%;
+    padding: 20px;
+    gap: 20px;
+}
+.popup .content .image{
+    flex-basis: 45%;
+    border-radius: 10px;
+    display: flex;
+}
+.popup .content .image img{
+    width: 200px;
+    height: 180px;
+    border: 2px solid #092848;
+    border-radius: 30px;
+    object-fit: cover;
+}
+.popup .content .animal-info{
+    flex-basis: 60%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.popup .content .animal-info span{
+    color: #888;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+.popup .content .animal-info p{
+    font-weight: 600;
+    color: #092848;
+}
+.popup i{
+    position: absolute;
+    color: var(--light-black);
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.popup button{
+    background-color: var(--blue-color);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    cursor: pointer;
+}
+
+.overlay.active, .popup.active {
+    display: block;
+}
+/* End Popup */
+
+/* Responsive */
+
+/* Large tablets / small laptops */
+@media (max-width: 1024px) {
+    aside.desk {
+        width: 220px;
+    }
+
+    .main {
+        margin-left: 220px;
+        padding: 30px;
+    }
+
+    .popup {
+        width: 70%;
+    }
+}
+
+/* Tablets */
+@media (max-width: 815px) {
+    .container {
+        display: block;
+    }
+
+    .main {
+        margin-left: 0;
+        width: 100%;
+        padding: 24px 20px 120px;
+    }
+
+    aside.desk {
+        display: none;
+    }
+
+    aside.mob {
+        display: block;
+    }
+
+    .popup {
+        width: 90%;
+        min-height: auto;
+    }
+
+    .popup .content {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .popup .content .image img {
+        width: 100%;
+        max-width: 250px;
+    }
+}
+
+/* Large phones */
+@media (max-width: 600px) {
+    aside.mob ul li a {
+        padding: 10px 12px;
+    }
+
+    .main {
+        padding: 20px 16px 120px;
+        gap: 24px;
+    }
+
+    .main .cards {
+        flex-direction: column;
+    }
+
+    .main .cards div a:last-child {
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 8px;
+        font-size: 14px;
+    }
+
+    .main .cards div a i.lst {
+        margin-left: 0;
+        flex-shrink: 0;
+    }
+
+    .adopted-animals {
+        padding: 20px 16px;
+        overflow-x: auto;
+    }
+
+    table {
+        min-width: 400px;
+    }
+}
+
+/* iPhone XR, 11, Plus-sized phones */
+@media (max-width: 430px) {
+    .main {
+        padding: 16px 14px 120px;
+    }
+
+    aside.mob {
+        width: calc(100% - 24px);
+        margin-left: 12px;
+        padding: 8px 10px;
+    }
+
+    aside.mob ul {
+        justify-content: space-around;
+    }
+
+    aside.mob ul li a {
+        padding: 9px 10px;
+    }
+
+    aside.mob a i {
+        font-size: 16px;
+    }
+
+    .main .title h2 {
+        font-size: 22px;
+    }
+
+    .main .cards div a:last-child {
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 8px;
+        font-size: 14px;
+    }
+
+    .main .cards div a i.lst {
+        margin-left: 0;
+        flex-shrink: 0;
+    }
+
+    .see-more {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+}
+
+/* Small phones (iPhone SE, etc.) */
+@media (max-width: 390px) {
+    .main {
+        padding: 16px 12px 120px;
+    }
+
+    aside.mob {
+        width: calc(100% - 24px);
+        margin-left: 12px;
+        padding: 8px 10px;
+    }
+
+    aside.mob ul {
+        justify-content: space-around;
+    }
+
+    aside.mob ul li a {
+        padding: 8px;
+    }
+
+    aside.mob a i {
+        font-size: 16px;
+    }
+
+    .main .title h2 {
+        font-size: 20px;
+    }
+
+    .main .cards div a:last-child {
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 8px;
+        font-size: 14px;
+    }
+
+    .main .cards div a i.lst {
+        margin-left: 0;
+        flex-shrink: 0;
+    }
+
+    .see-more {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+}
+
+/* Galaxy S, Moto G, and similar 360px phones */
+@media (max-width: 370px) {
+    .main {
+        padding: 16px 12px 120px;
+    }
+
+    aside.mob {
+        width: calc(100% - 20px);
+        margin-left: 10px;
+        padding: 7px 8px;
+    }
+
+    aside.mob ul {
+        justify-content: space-around;
+    }
+
+    aside.mob ul li a {
+        padding: 8px 7px;
+    }
+
+    aside.mob a i {
+        font-size: 15px;
+    }
+
+    .main .title h2 {
+        font-size: 20px;
+    }
+
+    .main .cards div a:last-child {
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 8px;
+        font-size: 13px;
+    }
+
+    .main .cards div a i.lst {
+        margin-left: 0;
+        flex-shrink: 0;
+    }
+
+    .see-more {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+}
+
+/* Very small phones */
+@media (max-width: 320px) {
+    aside.mob {
+        width: 100%;
+        margin-left: 0;
+        border-radius: 0;
+        padding: 6px 8px;
+        bottom: 0;
+        left: 0;
+    }
+
+    aside.mob ul {
+        justify-content: space-around;
+    }
+
+    aside.mob ul li a {
+        padding: 6px 4px;
+    }
+
+    aside.mob a i {
+        font-size: 14px;
+    }
+
+    .main {
+        padding: 16px 10px 120px;
+    }
+}
